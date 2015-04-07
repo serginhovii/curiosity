@@ -17,7 +17,7 @@ $(document).ready(function(){
 			content: {
 				text: function(event, api) {
 					$.ajax({
-                        url: '/user/videoLois/'+Math.random()+'/?width=550&id='+jQuery(event.target).parent().attr('name') // Use href attribute as URL
+                        url: '/staticvideo/lois/'+Math.random()+'/?width=550&id='+jQuery(event.target).parent().attr('name') // Use href attribute as URL
                     })
                     .then(function(content) {
                         // Set the tooltip content upon successful retrieval
@@ -52,7 +52,7 @@ $(document).ready(function(){
 			content: {
 				text: function(event, api) {
 					$.ajax({
-                        url: '/user/videoChulakov/'+Math.random()+'/?width=550&id='+jQuery(event.target).parent().attr('href').substr(1) // Use href attribute as URL
+                        url: '/staticvideo/chulakov/'+Math.random()+'/?width=550&id='+jQuery(event.target).parent().attr('href').substr(1) // Use href attribute as URL
                     })
                     .then(function(content) {
                         // Set the tooltip content upon successful retrieval
@@ -124,7 +124,7 @@ $(document).ready(function(){
 				text: function(event, api) {
 					aux=event;
 					$.ajax({
-                        url: '/user/videoGDrive/'+Math.random()+'/?width=550' // Use href attribute as URL
+                        url: '/staticvideo/gdrive/'+Math.random()+'/?width=550' // Use href attribute as URL
                     })
                     .then(function(content) {
                         // Set the tooltip content upon successful retrieval

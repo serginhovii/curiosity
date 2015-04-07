@@ -32,9 +32,14 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/': {
-    view: 'homepage'
-  }
+  '/':'StaticController.home',
+  '/chulakov':'StaticController.chulakov',
+  '/lois':'StaticController.lois',
+  '/gdrive':'StaticController.gDrive',
+  '/mchulakov':'StaticController.chulakovMov'
+    //{view: 'homepage'}
+	
+  
 
   /***************************************************************************
   *                                                                          *
