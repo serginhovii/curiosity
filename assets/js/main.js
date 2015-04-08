@@ -156,7 +156,7 @@ $(document).ready(function(){
 			$(this).hasClass('selected')?$(this).removeClass('selected'):$(this).addClass('selected');
 			$(this).trigger('cssClassChanged');
 		});
-		
+		/*
 		$(this).bind("cssClassChanged", function(){
 			if(	($(this).hasClass('selected') && !$(this).parent().parent().find(".layerEvent").is(":visible")) ||
 				(!$(this).hasClass('selected') && $(this).parent().parent().find(".layerEvent").is(":visible"))
@@ -181,7 +181,7 @@ $(document).ready(function(){
 				},350
 			);				
 			
-		});
+		});*/
 
 	});
 	
@@ -191,8 +191,9 @@ $(document).ready(function(){
 			$(this).hasClass('selected')?$(this).removeClass('selected'):$(this).addClass('selected');
 			$(this).trigger('cssClassChanged');
 		});
-		
+		/*
 		$(this).bind("cssClassChanged", function(){
+
 			if(	($(this).hasClass('selected') && !$(this).parent().parent().find(".layerAction").is(":visible")) ||
 				(!$(this).hasClass('selected') && $(this).parent().parent().find(".layerAction").is(":visible"))
 			)
@@ -205,7 +206,7 @@ $(document).ready(function(){
 				},350
 			);
 			
-		});
+		});*/
 
 	});
 	
