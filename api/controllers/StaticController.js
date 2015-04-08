@@ -24,7 +24,7 @@ module.exports = {
 					nombre1:'Serginho'
 					});
   },
-  chulakovEffect1: function (req, res){
+  chulakoveffect1: function (req, res){
 	 return res.view({});
   }
   
