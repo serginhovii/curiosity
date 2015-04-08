@@ -142,7 +142,6 @@ img{
 }
 .interactionImage img{
 	display:block;
-	box-shadow: 5px 5px 1px #888888;
 }
 .hiddenCommentary{
 	display:none;

@@ -1,0 +1,112 @@
+<style type="text/css">
+.content{
+	position: relative;
+}
+.content .layer1,.content .layer2{
+	position:absolute;
+	opacity: 0;
+	width:1214px;
+	max-width: none;
+	z-index: -1;
+	top:0px;
+	left:0px;
+	transition:all 0.8s ease-in-out;
+	transform:scale(2.5);
+	display: none;
+	padding: 0px;
+	
+}
+
+.content .chulakovLink1 .display{
+	display: block;
+}
+
+.show{
+	opacity:1;
+	
+}
+.interactionImage img {
+    display: block;
+    width: 1179px;
+    padding: 8px 17px ;
+}
+.chulakovLink1{
+	
+	display: block;
+	position:relative;
+}
+.chulakovLinkActive1 img, .chulakovLinkActive2 img{
+	 -webkit-filter: blur(10px);
+	 filter: blur(5px);
+}
+.chulakovLinkActive1 img.layer1,.chulakovLinkActive2 img.layer2{
+	transform:scale(1);
+	opacity: 1;
+	z-index:150;
+	-webkit-filter: none;
+	filter: none;
+	box-shadow: 5px 5px 1px #888888;
+}
+.chulakovLinkActive1,.chulakovLinkActive2 {
+	z-index: 150;
+	transform:scale(1);
+	position:relative;
+}
+
+</style>
+<script type="text/javascript">
+	jQuery(document).ready(function(){
+		
+		jQuery(".eventLayer").bind("cssClassChanged",function(){
+
+			if($(this).hasClass('selected')){
+				jQuery(".layer1").addClass("display");
+				setTimeout(function(){jQuery(".chulakovLink1").addClass("chulakovLinkActive1");},100);
+				
+			}else {
+				jQuery(".chulakovLink1").removeClass("chulakovLinkActive1");
+				setTimeout(function(){jQuery(".layer1").removeClass("display");},100);
+				
+			}	
+		});
+
+		jQuery(".actionLayer").bind("cssClassChanged",function(){
+
+			if($(this).hasClass('selected')){
+				jQuery(".layer2").addClass("display");
+				setTimeout(function(){jQuery(".chulakovLink1").addClass("chulakovLinkActive2");},100);
+				
+			}else {
+				jQuery(".chulakovLink1").removeClass("chulakovLinkActive2");
+				setTimeout(function(){jQuery(".layer2").removeClass("display");},100);
+				
+			}	
+		});
+
+		
+
+	});
+</script>
+<div class="deviceButtons">
+<a href="/chulakov"><img src="/images/design/ComputerSelected.jpg"/></a>
+<a href="/mchulakov"><img src="/images/design/Phone.jpg"/></a>
+
+</div>
+<div class="layerButtonContainer">
+		<a href="#" class="eventLayerAll">Events All</a> | <a href="#" class="actionLayerAll">Actions All</a>
+</div>
+	<div class="WebSiteFirstItem">
+		<img src="/images/chulakov/web/1/screen1.0.jpg"/>
+	</div>
+	<div class="interactionImageContainer">
+		<div class="interactionImage">
+		<div class="layerButtonContainer">
+			<a href="#" class="eventLayer">Events</a> | <a href="#" class="actionLayer">Actions</a>
+		</div>
+		<a class="chulakovLink1" href="#1"><img src="/images/chulakoveffect1/3.0.png"	/><img class="layer1" src="/images/chulakoveffect1/3.3.png" /><img class="layer2" src="/images/chulakoveffect1/3.6.png" /></a>
+		</div>
+		<p class="interactionParagraph">
+		<span>#BackgroundVideo</span><br/>
+		This page presents a background video which shows some interaction in our website.
+		</p>
+	</div>
