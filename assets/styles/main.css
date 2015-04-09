@@ -83,7 +83,13 @@ img{
 .footer{
 	width:100%;
 }
-
+.referenceLink{
+	color:#ffffff;
+	font-size: 14px;
+	text-align: right;
+	float: right;
+	padding-top: 10px;
+}
 /** Home page **/
 
 .imageHomeItem{
@@ -116,7 +122,20 @@ img{
 	box-shadow: 5px 5px 1px #888888;
 }
 
-/** **/
+/** Reference **/
+#Reference{
+	margin: 0px auto
+	display:inline-block;
+}
+#Reference img{
+	width:50%;
+}
+#Reference h3{
+	text-align: left;
+	width:50%;
+	display: inline-block;
+	color: #c5142e;
+}
 
 .WebSiteFirstItem{
 	margin:35px auto 35px;

@@ -36,7 +36,8 @@ module.exports.routes = {
   '/chulakov':'StaticController.chulakov',
   '/lois':'StaticController.lois',
   '/gdrive':'StaticController.gDrive',
-  '/mchulakov':'StaticController.chulakovMov'
+  '/mchulakov':'StaticController.chulakovMov',
+  '/reference':'StaticController.reference'
     //{view: 'homepage'}
 	
   
