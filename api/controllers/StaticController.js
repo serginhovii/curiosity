@@ -25,7 +25,13 @@ module.exports = {
 					});
   },
   chulakoveffect1: function (req, res){
-	 return res.view({});
+	 return res.view();
+  },
+  chulakoveffect2: function (req, res){
+   return res.view();
+  },
+  chulakoveffect3: function (req, res){
+   return res.view();
   }
   
 };

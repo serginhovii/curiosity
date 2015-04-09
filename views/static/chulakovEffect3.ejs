@@ -1,0 +1,127 @@
+<style type="text/css">
+.content .layer1,.content .layer2{
+	position:absolute;
+	
+	width:1214px;
+	max-width: none;
+	z-index: 10;
+	top:0px;
+	left:0px;
+	padding: 0px;
+	display:none;
+	
+}
+
+.content .chulakovLink1 .display{
+	display: block;
+}
+
+
+.interactionImage img {
+    display: block;
+    width: 1179px;
+    padding: 8px 17px ;
+}
+
+.chulakovLink1{
+	
+	display: block;
+	position:relative;
+}
+
+.chulakovLinkActive1 img, .chulakovLinkActive2 img{
+	 
+}
+
+.chulakovLinkActive1 img.layer1,.chulakovLinkActive2 img.layer2{
+	
+	z-index:150;
+	-webkit-filter: none;
+	filter: none;
+	box-shadow: 5px 5px 1px #888888;
+}
+.bluring1{
+	-webkit-filter: blur(2px);
+	 filter: blur(2px);
+}
+
+.bluring2{
+	-webkit-filter: blur(2px);
+	 filter: blur(2px);
+}
+.chulakovLinkActive1,.chulakovLinkActive2 {
+	z-index: 150;
+	position:relative;
+}
+</style>
+<script type="text/javascript">
+	jQuery(document).ready(function(){
+		
+		jQuery(".eventLayer").bind("cssClassChanged",function(){
+
+			if($(this).hasClass('selected')){
+				$(this).parent().parent().find(".layer1").show("slide", { direction: "up" }, 1000,function(){
+					$(this).parent().find(":first-child").addClass("bluring1");
+
+				});	
+
+			}else {
+				$(this).parent().parent().find(".layer1").hide("slide", { direction: "up" }, 1000,function(){
+					$(this).parent().find(":first-child").removeClass("bluring1");
+				});	
+					
+			}	
+		});
+
+		jQuery(".actionLayer").bind("cssClassChanged",function(){
+
+			if($(this).hasClass('selected')){
+				$(this).parent().parent().find(".layer2").show("slide", { direction: "up" }, 1000,function(){
+					$(this).parent().find(":first-child").addClass("bluring2");
+
+				});	
+
+			}else {
+				$(this).parent().parent().find(".layer2").hide("slide", { direction: "up" }, 1000,function(){
+					$(this).parent().find(":first-child").removeClass("bluring2");
+				});	
+					
+			}
+		});
+
+		
+
+	});
+</script>
+
+
+	<div class="WebSiteFirstItem">
+		<img src="/images/chulakov/web/1/screen1.0.jpg"/>
+	</div>
+	<div class="interactionImageContainer">
+		<div class="interactionImage">
+		<div class="layerButtonContainer">
+			<a href="#" class="eventLayer">Events</a> | <a href="#" class="actionLayer">Actions</a>
+		</div>
+		<a class="chulakovLink1" href="#1"><img src="/images/chulakoveffect1/3.0.png"	/><img class="layer1" src="/images/chulakoveffect1/3.3.png" /><img class="layer2" src="/images/chulakoveffect1/3.6.png" /></a>
+		</div>
+		<p class="interactionParagraph">
+		<span>#BackgroundVideo</span><br/>
+		This page presents a background video which shows some interaction in our website.
+		</p>
+	</div>
+	
+	<div class="interactionImageContainer">
+		<div class="interactionImage">
+			<div class="layerButtonContainer">
+			<a href="#" class="eventLayer">Events</a> | <a href="#" class="actionLayer">Actions</a>
+			</div>
+			<a class="chulakovLink1" href="#4"><img src="/images/chulakoveffect1/4.0.png"/><img class="layer1"  src="/images/chulakoveffect1/4.1.png"/><img class="layer2" src="/images/chulakoveffect1/4.3.png"	/></a>
+		</div>
+		<p class="interactionParagraph">
+		<span>#SlideEffect </span>&nbsp;<span>#LayerEffect</span><br/>
+		We added slide effects to the transitions, when new items appear to improve the feeling of the user, when using our interface.
+		We added the layers feeling to the transitions between web pages, to give an iphone navigation feeling.
+		</p>
+	</div>
+	

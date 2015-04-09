@@ -158,28 +158,39 @@ $(document).ready(function(){
 		});
 		
 		$(this).bind("cssClassChanged", function(){
-			if(	($(this).hasClass('selected') && !$(this).parent().parent().find(".layerEvent").is(":visible")) ||
+			if(	
+				($(this).hasClass('selected') && !$(this).parent().parent().find(".layerEvent").is(":visible")) ||
 				(!$(this).hasClass('selected') && $(this).parent().parent().find(".layerEvent").is(":visible"))
 			)
-			if(!$(this).hasClass("home"))
-			$(this).parent().parent().find(".layerEvent").animate(
-				{
-					right: 0, 
-					top:0,
-					opacity: 0.75,
-					width: 'toggle'
-				},350
-			);
-			else
-			$(this).parent().parent().find(".layerEvent").animate(
-				{
-					left: 119, 
-					top:0,
-					opacity: 0.75,
-					height:410,
-					width: 'toggle'
-				},350
-			);				
+				if(!$(this).hasClass("home"))
+					$(this).parent().parent().find(".layerEvent").animate(
+						{
+							right: 0, 
+							top:0,
+							opacity: 1,
+							width: 'toggle'
+						},350
+					);
+				else
+					$(this).parent().parent().find(".layerEvent").animate(
+						{
+							left: 0, 
+							top:0,
+							opacity: 1,
+							height:"100%",
+							width: 'toggle'
+						},350,(function(s){
+							return function(){
+								if(s.hasClass("selected"))
+									$(this).parent().find(":first-child").addClass("blur");
+								else
+									$(this).parent().find(":first-child").removeClass("blur");
+							};
+							
+
+							
+
+						} )($(this)) );				
 			
 		});
 
