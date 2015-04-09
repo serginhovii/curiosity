@@ -25,7 +25,7 @@
 
 .chulakovLink1{
 	
-	display: block;
+	display: inline-block;
 	position:relative;
 }
 
@@ -53,6 +53,10 @@
 	z-index: 150;
 	position:relative;
 }
+.bounceV{
+	animation: bounceV 0.8s ease-out;
+}
+
 </style>
 <script type="text/javascript">
 	jQuery(document).ready(function(){
@@ -60,13 +64,16 @@
 		jQuery(".eventLayer").bind("cssClassChanged",function(){
 
 			if($(this).hasClass('selected')){
-				$(this).parent().parent().find(".layer1").show("slide", { direction: "up" }, 1000,function(){
+				$(this).parent().parent().find(".layer1").show("slide", { direction: "up" }, 250,function(){
 					$(this).parent().find(":first-child").addClass("bluring1");
+					$(this).addClass("bounceV");
 
 				});	
 
 			}else {
-				$(this).parent().parent().find(".layer1").hide("slide", { direction: "up" }, 1000,function(){
+				$(this).parent().parent().find(".layer1").removeClass("bounceV");
+
+				$(this).parent().parent().find(".layer1").hide("slide", { direction: "up" }, 250,function(){
 					$(this).parent().find(":first-child").removeClass("bluring1");
 				});	
 					
@@ -76,13 +83,13 @@
 		jQuery(".actionLayer").bind("cssClassChanged",function(){
 
 			if($(this).hasClass('selected')){
-				$(this).parent().parent().find(".layer2").show("slide", { direction: "up" }, 1000,function(){
+				$(this).parent().parent().find(".layer2").show("slide", { direction: "up" }, 250,function(){
 					$(this).parent().find(":first-child").addClass("bluring2");
 
 				});	
 
 			}else {
-				$(this).parent().parent().find(".layer2").hide("slide", { direction: "up" }, 1000,function(){
+				$(this).parent().parent().find(".layer2").hide("slide", { direction: "up" }, 250,function(){
 					$(this).parent().find(":first-child").removeClass("bluring2");
 				});	
 					
