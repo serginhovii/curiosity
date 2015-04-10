@@ -130,13 +130,23 @@ img{
 #Reference img{
 	width:50%;
 }
+#Reference h2{
+	margin-bottom: 5px;
+}
 #Reference h3{
 	text-align: left;
 	width:50%;
 	display: inline-block;
 	color: #c5142e;
 }
+.lArticleContainer{
+	text-align: right;
+	width:50%;
+	margin: 0px auto;
+	font-size: 12px;
+}
 
+/*** ***/
 .WebSiteFirstItem{
 	margin:35px auto 35px;
 	width:60%;

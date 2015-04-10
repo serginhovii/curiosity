@@ -4,23 +4,30 @@
 }
 .content .layer1,.content .layer2{
 	position:absolute;
-	opacity: 0;
+	padding: 0px;
+	
 	width:1214px;
 	max-width: none;
-	z-index: -1;
 	top:0px;
 	left:0px;
-	transition:all 0.8s ease-in-out;
-	transform:scale(2.5);
 	display: none;
-	padding: 0px;
+	
+	opacity: 1;
+	transition:all 0.6s ease-in-out;
+	transform:scale(2.5);
+	background:url(data:image/gif;base64,R0lGODlhFAAUAIAAAMDAwP///yH5BAEAAAEALAAAAAAUABQAAAImhI+pwe3vAJxQ0hssnnq/7jVgmJGfGaGiyoyh68GbjNGXTeEcGxQAOw==) repeat scroll 0 0 rgba(0, 0, 0, 0);
+	/*
 	-webkit-filter: blur(2px);
 	 filter: blur(2px);
 	
+	background-image:repeating-linear-gradient(0deg, #000,#000 2px, transparent 1px, transparent 40px),
+					repeating-linear-gradient(-90deg, #000, #000 2px, transparent 1px, transparent 40px);
+	*/
 }
 
 .content .chulakovLink1 .display{
 	display: block;
+
 }
 
 .show{
@@ -47,10 +54,17 @@
 	-webkit-filter: none;
 	filter: none;
 	box-shadow: 5px 5px 1px #888888;
+	
+	/* repeating-linear-gradient(0deg, transparent,transparent 2px, transparent 1px, transparent 40px),
+					repeating-linear-gradient(-90deg, transparent, transparent 2px, transparent 1px, transparent 4px);
+*/
+	
+}
+.chulakovLinkActive1 .backgroundreset{
+	background: none;
 }
 .chulakovLinkActive1,.chulakovLinkActive2 {
 	z-index: 150;
-	transform:scale(1);
 	position:relative;
 }
 
@@ -66,12 +80,22 @@
 						(function(s){
 							return function(){
 								s.parent().parent().find(".chulakovLink1").addClass("chulakovLinkActive1");
+								
 							};
 						})($(this))	
 						,100);
+				setTimeout(
+						(function(s){
+							return function(){
+								s.parent().parent().find(".layer1").addClass("backgroundreset");
+								
+							};
+						})($(this))	
+						,600);
 				
 			}else {
 				$(this).parent().parent().find(".chulakovLink1").removeClass("chulakovLinkActive1");
+				$(this).parent().parent().find(".layer1").removeClass("backgroundreset");
 				setTimeout(
 					(function(s){
 
@@ -96,9 +120,18 @@
 							};
 						})($(this))	
 						,100);
+				setTimeout(
+						(function(s){
+							return function(){
+								s.parent().parent().find(".layer2").addClass("backgroundreset");
+								
+							};
+						})($(this))	
+						,600);
 				
 			}else {
 				$(this).parent().parent().find(".chulakovLink1").removeClass("chulakovLinkActive2");
+				$(this).parent().parent().find(".layer2").removeClass("backgroundreset");
 				setTimeout(
 					(function(s){
 
@@ -124,9 +157,9 @@
 	<div class="interactionImageContainer">
 		<div class="interactionImage">
 		<div class="layerButtonContainer">
-			<a href="#" class="eventLayer selected">Events</a> | <a href="#" class="actionLayer selected">Actions</a>
+			<a href="#" class="eventLayer selected">Events</a> | <a href="#" class="actionLayer">Actions</a>
 		</div>
-		<a class="chulakovLink1 chulakovLinkActive1 chulakovLinkActive2" href="#1"><img src="/images/chulakoveffect1/3.0.png"	/><img class="layer1 display" src="/images/chulakoveffect1/3.3.png" /><img class="layer2 display" src="/images/chulakoveffect1/3.6.png" /></a>
+		<a class="chulakovLink1 chulakovLinkActive1" href="#1"><img src="/images/chulakoveffect1/3.0.png"	/><img class="layer1 display backgroundreset" src="/images/chulakoveffect1/3.3.png" /><img class="layer2" src="/images/chulakoveffect1/3.6.png" /></a>
 		</div>
 		<p class="interactionParagraph">
 		<span>#BackgroundVideo</span><br/>
@@ -136,9 +169,9 @@
 	<div class="interactionImageContainer">
 		<div class="interactionImage">
 			<div class="layerButtonContainer">
-			<a href="#" class="eventLayer selected">Events</a> | <a href="#" class="actionLayer selected">Actions</a>
+			<a href="#" class="eventLayer selected">Events</a> | <a href="#" class="actionLayer">Actions</a>
 			</div>
-			<a class="chulakovLink1 chulakovLinkActive1 chulakovLinkActive2" href="#4"><img src="/images/chulakoveffect1/4.0.png"/><img class="layer1 display"  src="/images/chulakoveffect1/4.1.png"/><img class="layer2 display" src="/images/chulakoveffect1/4.3.png"	/></a>
+			<a class="chulakovLink1 chulakovLinkActive1" href="#4"><img src="/images/chulakoveffect1/4.0.png"/><img class="layer1 display"  src="/images/chulakoveffect1/4.1.png"/><img class="layer2" src="/images/chulakoveffect1/4.3.png"	/></a>
 		</div>
 		<p class="interactionParagraph">
 		<span>#SlideEffect </span>&nbsp;<span>#LayerEffect</span><br/>
