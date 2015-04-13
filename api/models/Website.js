@@ -9,10 +9,14 @@ module.exports = {
 
   attributes: {
 	id:{
-		type:'integer'
+		type:'integer',
+		autoIncrement: true,
+		primaryKey: true,
+		required:true
 	},
 	name:{
 		type:'string'
+
 	},
 	description:{
 		type: 'string'
@@ -20,6 +24,7 @@ module.exports = {
 	url:{
 		type: 'string'
 	}
+
   }
 };
 
