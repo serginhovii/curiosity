@@ -221,6 +221,8 @@ $(document).ready(function(){
 
 	});
 	
+
+	
 	$(".eventLayerAll").bind("click",function(){
 			
 			if($(this).hasClass('selected'))
