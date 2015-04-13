@@ -6,6 +6,21 @@
  */
 
 module.exports = {
+  hi: function (req, res) {
+    var auxi="sdf";
+    auxi=Website.find().exec(function(err,myRecord){
+      //auxi=myRecord.pop().toJSON().text;
+      var aux;
+      while(myRecord.length){
+      console.log(myRecord.length);
+      aux=myRecord.pop().toJSON();
+      console.log(aux);
+      }
+      return aux;
+    });
+    return res.send( "hiii");
+  //return res.send(Hashtag.query("sele1ct * from Hashtag",null,function(){ } ));
+  },
 	home: function (req, res){
 	 return res.view({});
   },
