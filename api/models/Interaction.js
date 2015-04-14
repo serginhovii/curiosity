@@ -1,5 +1,5 @@
 /**
-* Website.js
+* PageInteraction.js
 *
 * @description :: TODO: You might write a short summary of how this model works and what it represents here.
 * @docs        :: http://sailsjs.org/#!documentation/models
@@ -8,40 +8,37 @@
 module.exports = {
 
   attributes: {
-	id:{
+  	id:{
 		type:'integer',
 		autoIncrement: true,
 		primaryKey: true,
 		required:true
 	},
-	name:{
-		type:'string',
-		required:true
-
-	},
 	description:{
 		type: 'string'
 	},
-	url:{
-		type: 'string'
+	hashtags:{
+		collection:'hashtag',
+		via:'interactions'
 	},
-	creator:{
-		model:'creator',
+	order:{
+		type:'float'
+	},
+	website:{
+		model:'website',
 		required:true
 	},
-	webcolors:{
-		collection:'color',
-		via: 'websites'
+	video:{
+		type:'string'
 	},
-	designtags:{
-		collection:'hashtag',
-		via:'websites'
+	layers:{
+		collection:'layer',
+		via:'interaction'
 	},
-	interactions:{
-		collection:'interaction',
-		via:'website'
+	main:{
+		type:'boolean',
+		defaultsTo:	false
 	}
-
-  }
+ }
 };
 

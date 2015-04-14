@@ -1,5 +1,5 @@
 /**
-* Website.js
+* SymbolLayerPosition.js
 *
 * @description :: TODO: You might write a short summary of how this model works and what it represents here.
 * @docs        :: http://sailsjs.org/#!documentation/models
@@ -8,40 +8,36 @@
 module.exports = {
 
   attributes: {
-	id:{
+  	id:{
 		type:'integer',
 		autoIncrement: true,
 		primaryKey: true,
 		required:true
 	},
-	name:{
-		type:'string',
-		required:true
-
-	},
-	description:{
-		type: 'string'
-	},
-	url:{
-		type: 'string'
-	},
-	creator:{
-		model:'creator',
+	symbol:{
+		model: 'symbol',
 		required:true
 	},
-	webcolors:{
-		collection:'color',
-		via: 'websites'
+	layer:{
+		model: 'layer',
+		required:true
 	},
-	designtags:{
-		collection:'hashtag',
-		via:'websites'
+	positionX:{
+		type: 'integer',
+		required:true
 	},
-	interactions:{
-		collection:'interaction',
-		via:'website'
+	positionY:{
+		type: 'integer',
+		required:true
+	},
+	width:{
+		type: 'integer',
+		required:true
+	},
+	height:{
+		type: 'integer',
+		required:true	
 	}
-
   }
 };
 

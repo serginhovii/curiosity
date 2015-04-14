@@ -1,5 +1,5 @@
 /**
-* Website.js
+* Hashtag.js
 *
 * @description :: TODO: You might write a short summary of how this model works and what it represents here.
 * @docs        :: http://sailsjs.org/#!documentation/models
@@ -8,7 +8,7 @@
 module.exports = {
 
   attributes: {
-	id:{
+  	id:{
 		type:'integer',
 		autoIncrement: true,
 		primaryKey: true,
@@ -17,31 +17,27 @@ module.exports = {
 	name:{
 		type:'string',
 		required:true
-
 	},
-	description:{
+	type:{
+		type: 'string',
+    	enum: ['design', 'effect'],
+    	required:true
+	},
+	imgExample:{
 		type: 'string'
 	},
-	url:{
-		type: 'string'
+	order:{
+		type:'float'
 	},
-	creator:{
-		model:'creator',
-		required:true
-	},
-	webcolors:{
-		collection:'color',
-		via: 'websites'
-	},
-	designtags:{
-		collection:'hashtag',
-		via:'websites'
+	websites:{
+		collection:'website',
+		via:'designtags'
 	},
 	interactions:{
 		collection:'interaction',
-		via:'website'
+		via:'hashtags'
 	}
-
+	
   }
 };
 
