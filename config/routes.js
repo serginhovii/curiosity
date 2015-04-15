@@ -32,12 +32,15 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/':'StaticController.home',
-  '/chulakov':'StaticController.chulakov',
-  '/lois':'StaticController.lois',
-  '/gdrive':'StaticController.gDrive',
-  '/mchulakov':'StaticController.chulakovMov',
-  '/reference':'StaticController.reference'
+  '/':{controller:"Static",action:"home",locals: {layout: '/static/layout'}},
+  '/lois':{controller:"Static",action:"lois",locals: {layout: "/static/layout"}},
+  '/gdrive':{controller:"Static",action:"gDrive",locals: {layout: "/static/layout"}},
+  '/mchulakov':{controller:"Static",action:"chulakovMov",locals: {layout: "/static/layout"}},
+  '/reference':{controller:"Static",action:"reference",locals: {layout: "/static/layout"}},
+  '/chulakov':{controller:"Static",action:"chulakov",locals: {layout: "/static/layout"}},
+  '/static/chulakoveffect1':{controller:"Static",action:"chulakoveffect1",locals: {layout: "/static/layout"}},
+  '/static/chulakoveffect2':{controller:"Static",action:"chulakoveffect2",locals: {layout: "/static/layout"}},
+  '/static/chulakoveffect3':{controller:"Static",action:"chulakoveffect3",locals: {layout: "/static/layout"}}
     //{view: 'homepage'}
 	
   
