@@ -110,13 +110,10 @@
     </div>
     <div class="content">
     <%- body %>
-    </div>
-    <div class="footer">
-    </div>
-  </div>
-
-
-    <!--
+	</div>
+    <div class="footer"></div>
+	</div>
+<!--
         Client-side Templates
         ========================
 
@@ -129,7 +126,7 @@
         include them here automatically (between TEMPLATES and TEMPLATES END).
         
         To customize this behavior to fit your needs, just edit `tasks/pipeline.js`.
-        For example, here are a few things you could do:
+        For example, here are a few things you could do:
 
             + Import templates from other directories
             + Use a different template engine (handlebars, jade, dust, etc.)
@@ -142,8 +139,27 @@
     <!--TEMPLATES END-->
 
 
-    
-    
-   
-  </body>
+    <!--
+
+      Client-side Javascript
+      ========================
+
+      You can always bring in JS files manually with `script` tags, or asynchronously
+      on the client using a solution like AMD (RequireJS).  Or, if you like, you can 
+      take advantage of Sails' conventional asset pipeline (boilerplate Gruntfile).
+
+      By default, files in your `assets/js` folder are included here
+      automatically (between SCRIPTS and SCRIPTS END).  Both JavaScript (.js) and
+      CoffeeScript (.coffee) are supported. In production, your scripts will be minified
+      and concatenated into a single file.
+      
+      To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
+      For example, here are a few things you could do:
+          
+          + Change the order of your scripts
+          + Import scripts from other directories
+          + Use a different preprocessor, like TypeScript
+
+    -->
+	</body>
 </html>

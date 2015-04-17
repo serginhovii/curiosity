@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>NxGallery</title>
+    <title>New Sails App</title>
 
     <!-- Viewport mobile tag for sensible mobile support -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -27,52 +27,75 @@
             + Import stylesheets from other directories
             + Use a different or additional preprocessor, like SASS, SCSS or Stylus
     -->
-    <link rel="apple-touch-icon" sizes="57x57" href="/images/favicons/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/images/favicons/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/images/favicons/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/images/favicons/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/images/favicons/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/images/favicons/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/images/favicons/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/images/favicons/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="/images/favicons/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/images/favicons/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png">
-    <link rel="manifest" href="/images/favicons/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/images/favicons/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
     <!--STYLES-->
     
     <!--STYLES END-->
-     <!--SCRIPTS-->
-     <script src="/js/dependencies/sails.io.js"></script>
-     <script src="/js/dependencies/jquery/jquery-1.11.2.min.js"></script>
-     <script src="/js/dependencies/jquery/jquery-ui.js"></script>
-     <!--SCRIPTS END-->
-  </head>
 
-  <body>
-	<div class="mainContainer">
-		<div class="header">
-			<div class="logoContainer">
-			<a href="/">
-			<img src="/images/logo1.png"/>
-			</a>
-        <a target="_blank" class="referenceLink" href="/reference">Help</a>
-			</div>
-		</div>
-		<div class="content">
-		<%- body %>
-		</div>
-		<div class="footer">
-		</div>
-	</div>
+    <!--  Favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/dynamic/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/dynamic/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/dynamic/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/dynamic/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/dynamic/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/dynamic/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/dynamic/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/dynamic/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/dynamic/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/images/dynamic/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/dynamic/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/dynamic/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/dynamic/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/images/dynamic/favicons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/images/dynamic/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
 
 
+
+    <!--  Stylesheets -->
+    <link rel="stylesheet" href="/styles/dynamic/main.css">
     <!--
+
+      Client-side Javascript
+      ========================
+
+      You can always bring in JS files manually with `script` tags, or asynchronously
+      on the client using a solution like AMD (RequireJS).  Or, if you like, you can 
+      take advantage of Sails' conventional asset pipeline (boilerplate Gruntfile).
+
+      By default, files in your `assets/js` folder are included here
+      automatically (between SCRIPTS and SCRIPTS END).  Both JavaScript (.js) and
+      CoffeeScript (.coffee) are supported. In production, your scripts will be minified
+      and concatenated into a single file.
+      
+      To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
+      For example, here are a few things you could do:
+          
+          + Change the order of your scripts
+          + Import scripts from other directories
+          + Use a different preprocessor, like TypeScript
+
+    -->
+    
+   
+  </head>
+  
+  <body>
+    <div class="mainContainer">
+    <div class="header">
+      <div class="logoContainer">
+      <a href="/">
+      <img src="/images/dynamic/logo.png"/>
+      </a>
+        <a target="_blank" class="referenceLink" href="/reference">Help</a>
+      </div>
+    </div>
+    <div class="content">
+    <%- body %>
+    </div>
+    <div class="footer"></div>
+  </div>
+<!--
         Client-side Templates
         ========================
 
@@ -120,7 +143,10 @@
           + Use a different preprocessor, like TypeScript
 
     -->
-
-    
+    <!--SCRIPTS-->
+    <script src="/js/dependencies/sails.io.js"></script>
+    <script src="/js/dependencies/jquery/jquery-1.11.2.min.js"></script>
+    <script src="/js/dependencies/jquery/jquery-ui.js"></script>
+    <!--SCRIPTS END-->
   </body>
 </html>

@@ -22,6 +22,9 @@ module.exports = {
 	description:{
 		type: 'string'
 	},
+	tag:{
+		type: 'string'
+	},
 	url:{
 		type: 'string'
 	},
