@@ -16,8 +16,8 @@ module.exports = {
 	},
 	type:{
 		type:'string',
-		enum:['BEvent','Event','BAction','Action'],
-		size:10
+		enum:['EventBase','EventSketch','ResultBase','ResultSketch'],
+		size:15
 	},
 	image:{
 		type:'string'

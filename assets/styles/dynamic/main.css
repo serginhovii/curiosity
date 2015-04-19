@@ -82,33 +82,46 @@ img{
 }
 /** Home page **/
 
-.imageHomeItem{
-	margin:0px auto;
-	width:80%;
-	display:block;
-	position:relative;
-	text-align:center;
-	margin: 25px auto 25px;
+.contentMainContainer{
+	width:90%;
+	margin:0px  auto;
 }
-
-.linkHomeItemContainer{
-	position:relative;
-	display: inline-block;
-	margin: 0px auto;
+ul.listHome{
+	list-style-type: none;
+	widt:100%;
+	display: block;
+	clear: both;
 }
-.imageHomeItem img{
-	width:100%;
+ul.listHome::after{
+	clear: both;
+    content: "";
+    display: block;
 }
-.imageHomeItem img:first-child{
-	padding: 5px 12px;
-	width: 809px;
-  
+ul.listHome li{
+	width:50%;
+	margin:0px;
+	padding:10px;
+	float: left;
+	box-sizing: border-box;
 }
-  
-.imageHomeItem img.layer{
-	position:absolute;
-	top:0px;
-	left:0px;
-	box-shadow: 5px 5px 1px #888888;
+.divItemTextHome p{
+	text-align: left;
+	font-size: 13px;
+	margin: 5px auto;
 }
-
+.divItemTextHome h3{
+	font-size: 15px;
+	text-align: left;
+	margin: 5px auto;
+	color:#000000;
+}
+.divItemTextHome h3 a{
+	color:#000000;
+}
+.divItemTextHome a{
+	color:#c5142e;
+	font-weight: bold;
+}
+.divItemTextHome span{
+	font-weight: bold;
+}

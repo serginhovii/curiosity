@@ -1,0 +1,285 @@
+<style type="text/css">
+.content{
+	position: relative;
+}
+.content .layer1,.content .layer2{
+	position:absolute;
+	padding: 0px;
+	
+	width:800px;
+	max-width: none;
+	top:0px;
+	left:0px;
+	display: none;
+	
+	opacity: 1;
+	transition:all 0.6s ease-in-out;
+	transform:scale(2.5);
+	background:url(data:image/gif;base64,R0lGODlhFAAUAIAAAMDAwP///yH5BAEAAAEALAAAAAAUABQAAAImhI+pwe3vAJxQ0hssnnq/7jVgmJGfGaGiyoyh68GbjNGXTeEcGxQAOw==) repeat scroll 0 0 rgba(0, 0, 0, 0);
+	/*
+	-webkit-filter: blur(2px);
+	 filter: blur(2px);
+	
+	background-image:repeating-linear-gradient(0deg, #000,#000 2px, transparent 1px, transparent 40px),
+					repeating-linear-gradient(-90deg, #000, #000 2px, transparent 1px, transparent 40px);
+	*/
+}
+
+.interactionImageContainer{
+	display: inline-block;
+}
+.interactionImage{
+	display: block;
+	float:left;
+	width: 800px;
+	padding: 8px 17px ;
+}
+.content .chulakovLink1 .display{
+	display: block;
+}
+
+.interactionImage img {
+    width: 100%;
+}
+
+.chulakovLink1{
+	
+	display: inline-block;
+	position:relative;
+	
+	
+}
+.chulakovLinkActive1 img, .chulakovLinkActive2 img{
+	 
+}
+.chulakovLinkActive1 img.layer1,.chulakovLinkActive2 img.layer2{
+	
+	z-index:150;
+	-webkit-filter: none;
+	filter: none;
+	box-shadow: 5px 5px 1px #888888;
+}
+.bluring1{
+	-webkit-filter: blur(2px);
+	 filter: blur(2px);
+}
+
+.bluring2{
+	-webkit-filter: blur(2px);
+	 filter: blur(2px);
+}
+.chulakovLinkActive1,.chulakovLinkActive2 {
+	z-index: 150;
+	position:relative;
+}
+.bounceV{
+	-webkit-animation: bounceV 0.8s ease-out;
+	animation: bounceV 0.8s ease-out;
+}
+.contentContainer{
+	display: inline-block;
+	float: left;
+	width:200px;
+	
+}
+.layerButtonContainer a{
+	display: block;
+	width:110px;
+	text-align: left;
+	box-shadow: 4px 0px 15px #dddddd;
+}
+.eventLayer{
+	
+}
+.layerButtonContainer a{
+	background:none;
+	margin:4px;
+	padding:6px;
+	color:#000000;
+	
+}
+.layerButtonContainer a.selected{	
+	background:none;
+}
+.layerButtonContainer a span.backgroundEye{
+	background-image:url('/images/static/icons/eyeIcon.png');
+	width:37px;
+	display: inline-block;
+	background-repeat: no-repeat;
+	opacity: 0.2;
+}
+.layerButtonContainer a.selected span.backgroundEye{
+	opacity: 1;
+}
+.layerButtonContainer a span{
+	display: inline-block;
+	opacity: 1;
+	padding-left: 2px;
+}
+.chulakovLinkActive1 img, .chulakovLinkActive2 img{
+	 -webkit-filter: blur(2px);
+	 filter: blur(2px);
+}
+.chulakovLinkActive1 img.layer1,.chulakovLinkActive2 img.layer2{
+	transform:scale(1);
+	opacity: 1;
+	z-index:150;
+	-webkit-filter: none;
+	filter: none;
+	box-shadow: 5px 5px 1px #888888;
+	
+	/* repeating-linear-gradient(0deg, transparent,transparent 2px, transparent 1px, transparent 40px),
+					repeating-linear-gradient(-90deg, transparent, transparent 2px, transparent 1px, transparent 4px);
+*/
+	
+}
+.chulakovLinkActive1 .backgroundreset, .chulakovLinkActive2 .backgroundreset{
+	background: none;
+}
+.chulakovLinkActive1,.chulakovLinkActive2 {
+	z-index: 150;
+	position:relative;
+}
+</style>
+<script type="text/javascript">
+	jQuery(document).ready(function(){
+		
+		jQuery(".eventLayer").bind("cssClassChanged",function(){
+
+			if($(this).hasClass('selected')){
+				$(this).parent().parent().parent().find(".layer1").addClass("display");
+				setTimeout(
+						(function(s){
+							return function(){
+								s.parent().parent().parent().find(".chulakovLink1").addClass("chulakovLinkActive1");
+								
+							};
+						})($(this))	
+						,100);
+				setTimeout(
+						(function(s){
+							return function(){
+								s.parent().parent().parent().find(".layer1").addClass("backgroundreset");
+								
+							};
+						})($(this))	
+						,600);
+				
+			}else {
+				$(this).parent().parent().parent().find(".chulakovLink1").removeClass("chulakovLinkActive1");
+				$(this).parent().parent().parent().find(".layer1").removeClass("backgroundreset");
+				setTimeout(
+					(function(s){
+
+					return function (){
+						s.parent().parent().parent().find(".layer1").removeClass("display");
+					};
+
+				})($(this))
+				,200);
+				
+			}	
+		});
+
+		jQuery(".actionLayer").bind("cssClassChanged",function(){
+
+			if($(this).hasClass('selected')){
+				$(this).parent().parent().parent().find(".layer2").addClass("display");
+				setTimeout(
+						(function(s){
+							return function(){
+								s.parent().parent().parent().find(".chulakovLink1").addClass("chulakovLinkActive2");
+							};
+						})($(this))	
+						,100);
+				setTimeout(
+						(function(s){
+							return function(){
+								s.parent().parent().parent().find(".layer2").addClass("backgroundreset");
+								
+							};
+						})($(this))	
+						,600);
+				
+			}else {
+				$(this).parent().parent().parent().find(".chulakovLink1").removeClass("chulakovLinkActive2");
+				$(this).parent().parent().parent().find(".layer2").removeClass("backgroundreset");
+				setTimeout(
+					(function(s){
+
+					return function (){
+						s.parent().parent().parent().find(".layer2").removeClass("display");
+					};
+
+				})($(this))
+				,200);
+				
+			}	
+		});
+
+		
+
+	});
+</script>
+
+
+	<div class="WebSiteFirstItem">
+		<img src="/media/static/chulakov/web/1/screen1.0.jpg"/>
+	</div>
+	<div class="interactionImageContainer">
+		
+		<div class="interactionImage">
+		<a class="chulakovLink1 chulakovLinkActive1" href="#1">
+			<img src="/media/static/chulakoveffect1/3.0.png"	/>
+			<img class="layer1 display backgroundreset" src="/media/static/chulakoveffect1/3.3.png" />
+			<img class="layer2" src="/media/static/chulakoveffect1/3.6.png" />
+		</a>
+		</div>
+		<div class="contentContainer">
+			<div class="layerButtonContainer">
+				<a href="#" class="eventLayer selected"><span class="backgroundEye">&nbsp;</span><span>Events</span></a>
+				<a href="#" class="actionLayer"><span class="backgroundEye">&nbsp;</span><span>Actions</span></a>
+			</div>
+			<p class="interactionParagraph">
+			<span>#BackgroundVideo</span><br/>
+			This page presents a background video which shows some interaction in our website.
+			</p>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div class="interactionImageContainer">
+		
+		<div class="interactionImage">
+		<a class="chulakovLink1 chulakovLinkActive1" href="#1">
+			<img src="/media/static/chulakoveffect1/4.0.png"/>
+			<img class="layer1 display backgroundreset"  src="/media/static/chulakoveffect1/4.1.png"/>
+			<img class="layer2" src="/media/static/chulakoveffect1/4.3.png"	/>
+		</a>
+		</div>
+		<div class="contentContainer">
+			<div class="layerButtonContainer">
+				<a href="#" class="eventLayer selected"><span class="backgroundEye">&nbsp;</span><span>Events</span></a>
+				<a href="#" class="actionLayer"><span class="backgroundEye">&nbsp;</span><span>Actions</span></a>
+			</div>
+			<p class="interactionParagraph">
+			<span>#BackgroundVideo</span><br/>
+			This page presents a background video which shows some interaction in our website.
+			</p>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<!-- 
+	<div class="interactionImageContainer">
+		<div class="interactionImage">
+			<div class="layerButtonContainer">
+			<a href="#" class="eventLayer">Events</a> | <a href="#" class="actionLayer">Actions</a>
+			</div>
+			<a class="chulakovLink1" href="#4"><img src="/media/static/chulakoveffect1/4.0.png"/><img class="layer1"  src="/media/static/chulakoveffect1/4.1.png"/><img class="layer2" src="/media/static/chulakoveffect1/4.3.png"	/></a>
+		</div>
+		<p class="interactionParagraph">
+		<span>#SlideEffect </span>&nbsp;<span>#LayerEffect</span><br/>
+		We added slide effects to the transitions, when new items appear to improve the feeling of the user, when using our interface.
+		We added the layers feeling to the transitions between web pages, to give an iphone navigation feeling.
+		</p>
+	</div>	
+	-->

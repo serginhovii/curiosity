@@ -33,6 +33,9 @@ module.exports = {
   chulakoveffect3: function (req, res){
    return res.view();
   },
+  chulakoveffect4: function (req, res){
+   return res.view();
+  },
   reference:function (req, res){
     return res.view();
   }
