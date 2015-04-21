@@ -43,16 +43,8 @@
 	
 	
 }
-.chulakovLinkActive1 img, .chulakovLinkActive2 img{
-	 
-}
-.chulakovLinkActive1 img.layer1,.chulakovLinkActive2 img.layer2{
-	
-	z-index:150;
-	-webkit-filter: none;
-	filter: none;
-	box-shadow: 5px 5px 1px #888888;
-}
+
+
 .bluring1{
 	-webkit-filter: blur(2px);
 	 filter: blur(2px);
@@ -62,8 +54,8 @@
 	-webkit-filter: blur(2px);
 	 filter: blur(2px);
 }
+
 .chulakovLinkActive1,.chulakovLinkActive2 {
-	z-index: 150;
 	position:relative;
 }
 
@@ -114,13 +106,17 @@
 	 -webkit-filter: blur(2px);
 	 filter: blur(2px);
 }
+img.layer1,img.layer2{
+	filter:  blur(2px);
+}
 .chulakovLinkActive1 img.layer1,.chulakovLinkActive2 img.layer2{
 	transform:scale(1);
 	opacity: 1;
 	z-index:150;
 	-webkit-filter: none;
-	filter: none;
+	filter:  blur(0px);
 	box-shadow: 5px 5px 1px #888888;
+
 }
 .chulakovLinkActive1 .backgroundreset, .chulakovLinkActive2 .backgroundreset{
 	background: none;
@@ -203,6 +199,7 @@
 				setTimeout(
 						(function(s){
 							return function(){
+								s.find(".layer2").addClass("bounceV");
 								s.find(".layer2").addClass("backgroundreset");
 								
 							};
@@ -212,6 +209,7 @@
 			}else {
 				intContainer.find(".chulakovLink1").removeClass("chulakovLinkActive2");
 				intContainer.find(".layer2").removeClass("backgroundreset");
+				intContainer.find(".layer2").removeClass("bounceV");
 				setTimeout(
 					(function(s){
 
