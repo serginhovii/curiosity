@@ -108,12 +108,13 @@
 }
 img.layer1,img.layer2{
 	filter:  blur(2px);
+	-webkit-filter: blur(2px);
 }
 .chulakovLinkActive1 img.layer1,.chulakovLinkActive2 img.layer2{
 	transform:scale(1);
 	opacity: 1;
 	z-index:150;
-	-webkit-filter: none;
+	-webkit-filter: blur(0px);
 	filter:  blur(0px);
 	box-shadow: 5px 5px 1px #888888;
 
