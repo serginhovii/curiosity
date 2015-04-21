@@ -42,7 +42,9 @@ module.exports.routes = {
   '/static/chulakoveffect2':{controller:"Static",action:"chulakoveffect2",locals: {layout: "/static/layout"}},
   '/static/chulakoveffect3':{controller:"Static",action:"chulakoveffect3",locals: {layout: "/static/layout"}},
   '/static/chulakoveffect4':{controller:"Static",action:"chulakoveffect4",locals: {layout: "/static/layout"}},
-  '/dhome':{controller:"Dynamic",action:"home"}
+  '/static/chulakoveffect5':{controller:"Static",action:"chulakoveffect5",locals: {layout: "/static/layout"}},
+  '/dhome':{controller:"Dynamic",action:"home"},
+  '/page/:tag':{controller:"Dynamic",action:"page"}
     //{view: 'homepage'}
 
 	

@@ -31,11 +31,13 @@ module.exports = {
 	},
 	websites:{
 		collection:'website',
-		via:'designtags'
+		via:'designtags',
+		dominant: true
 	},
 	interactions:{
 		collection:'interaction',
-		via:'hashtags'
+		via:'hashtags',
+		dominant: true
 	}
 	
   }

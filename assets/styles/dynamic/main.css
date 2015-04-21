@@ -80,15 +80,19 @@ img{
 	float: right;
 	padding-top: 10px;
 }
-/** Home page **/
 
+
+/**** All  ****/
+/***************/
 .contentMainContainer{
 	width:90%;
 	margin:0px  auto;
 }
+
+/** Home page **/
+/***************/
 ul.listHome{
 	list-style-type: none;
-	widt:100%;
 	display: block;
 	clear: both;
 }
@@ -98,7 +102,7 @@ ul.listHome::after{
     display: block;
 }
 ul.listHome li{
-	width:50%;
+	width: 50%;
 	margin:0px;
 	padding:10px;
 	float: left;
@@ -124,4 +128,42 @@ ul.listHome li{
 }
 .divItemTextHome span{
 	font-weight: bold;
+}
+/** Interactions page **/
+/***********************/
+
+ul.listInteractions{
+	list-style-type: none;
+	width:100%;
+	display: block;
+	clear: both;
+	padding: 0px;
+}
+ul.listInteractions::after{
+	clear: both;
+    content: "";
+    display: block;
+}
+ul.listInteractions li{
+	width:100%;
+	margin:0px;
+	padding:20px 10px;
+	float: left;
+	box-sizing: border-box;
+}
+.imgContItemInteraction{
+	float: left;
+	display: block;
+	padding: 0px 10px;
+}
+.imgContItemInteraction img{
+	width:800px;
+
+}
+.textContItemInteraction
+{
+	max-width:374px;
+	float: left;
+	box-sizing: border-box;
+	display: block;
 }
