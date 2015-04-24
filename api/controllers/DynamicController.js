@@ -51,9 +51,9 @@ module.exports = {
     var interactions=[];
       async.series([
                     function(callback){
-                      Website.find({where:{tag:req.param('tag')}}).populate('creator').populate('designtags').exec(function(err, datSite){
+                      Website.find({where:{tag:req.param('tag')}}).populate('designtags').populate('creator').exec(function(err, datSite){
                         page=datSite.pop().toJSON();
-                        console.log(page.designtags.id);
+                        console.log(page.designtags);
                          callback(err,1);         
                       });
 
