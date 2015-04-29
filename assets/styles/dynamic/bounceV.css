@@ -1,0 +1,153 @@
+@-webkit-keyframes bounceV {
+  0% {
+  -webkit-transform:translateY(-3%);
+    
+  }
+  5% {
+  -webkit-transform:translateY(-3%);
+  }
+  15% {
+  -webkit-transform:translateY(0);
+    padding-bottom: 5px;
+  }
+  30% {
+  -webkit-transform:translateY(-2%);
+  }
+  40% {
+  -webkit-transform:translateY(0%);
+    padding-bottom: 6px;
+  }
+  50% {
+  -webkit-transform:translateY(-1%);
+  }
+  70% {
+  -webkit-transform:translateY(0%);
+    padding-bottom: 7px;
+  }
+  80% {
+  -webkit-transform:translateY(-1%);
+  }
+  90% {
+  -webkit-transform:translateY(0%);
+    padding-bottom: 8px;
+  }
+  100% {
+    -webkit-transform:translateY(0);
+    padding-bottom: 9px;
+  }
+}
+@-moz-keyframes bounceV {
+  0% {
+  -moz-transform:translateY(-3%);
+    
+  }
+  5% {
+  -moz-transform:translateY(-3%);
+  }
+  15% {
+  -moz-transform:translateY(0);
+    padding-bottom: 5px;
+  }
+  30% {
+  -moz-transform:translateY(-2%);
+  }
+  40% {
+  -moz-transform:translateY(-0%);
+    padding-bottom: 6px;
+  }
+  50% {
+  -moz-transform:translateY(-1%);
+  }
+  70% {
+  -moz-transform:translateY(0%);
+    padding-bottom: 7px;
+  }
+  80% {
+  -moz-transform:translateY(-1%);
+  }
+  90% {
+  -moz-transform:translateY(0%);
+    padding-bottom: 8px;
+  }
+  100% {
+  -moz-transform:translateY(0);
+    padding-bottom: 9px;
+  }
+}
+@-o-keyframes bounceV {
+  0% {
+  -o-transform:translateY(-3%);
+    
+  }
+  5% {
+  -o-transform:translateY(-3%);
+  }
+  15% {
+  -o-transform:translateY(0);
+    padding-bottom: 5px;
+  }
+  30% {
+  -o-transform:translateY(-2%);
+  }
+  40% {
+  -o-transform:translateY(-0%);
+    padding-bottom: 6px;
+  }
+  50% {
+  -o-transform:translateY(-1%);
+  }
+  70% {
+  -o-transform:translateY(0%);
+    padding-bottom: 7px;
+  }
+  80% {
+  -o-transform:translateY(-1%);
+  }
+  90% {
+  -o-transform:translateY(0%);
+    padding-bottom: 8px;
+  }
+  100% {
+  -o-transform:translateY(0);
+    padding-bottom: 9px;
+  }
+}
+
+@keyframes bounceV {
+  0% {
+	transform:translateY(-3%);
+    
+  }
+  5% {
+  	transform:translateY(-3%);
+  }
+  15% {
+  	transform:translateY(0);
+    padding-bottom: 5px;
+  }
+  30% {
+  	transform:translateY(-2%);
+  }
+  40% {
+  	transform:translateY(0%);
+    padding-bottom: 6px;
+  }
+  50% {
+  	transform:translateY(-1%);
+  }
+  70% {
+  	transform:translateY(0%);
+    padding-bottom: 7px;
+  }
+  80% {
+  	transform:translateY(-1%);
+  }
+  90% {
+  	transform:translateY(0%);
+  	padding-bottom: 8px;
+  }
+  100% {
+  	transform:translateY(0);
+  	padding-bottom: 9px;
+  }
+}

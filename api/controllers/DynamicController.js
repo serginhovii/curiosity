@@ -34,7 +34,7 @@ module.exports = {
                                 , 
                                 function(err, result){
                                   if(err==null){
-                                  callback(null,1);
+                                  callback(err,1);
                                   }
                                 }
                       );
@@ -42,39 +42,91 @@ module.exports = {
                     ],
                     function(err, results){
                       if(err==null){
-                        return res.view({pages:pages});  
+                        return res.view({pages:pages,moment:require('moment')});  
                       }
                     });
   },
   page:function (req, res) {
     var page;
     var interactions=[];
+
       async.series([
                     function(callback){
-                      Website.find({where:{tag:req.param('tag')}}).populate('designtags').populate('creator').exec(function(err, datSite){
+                      Website.find({where:{tag:req.param('tag')}}).
+                      populate('designtagsI').
+                      populate('creator').
+                      populate('interactions',{where:{main:false}, order:{sort:0}}).exec(function(err, datSite){
                         page=datSite.pop().toJSON();
-                        console.log(page.designtags);
                          callback(err,1);         
                       });
-
                     },
                     function(callback){
+                      page.iHashtags=[];
+                      async.eachSeries(
+                                page.interactions, 
+                                function(interaction,callback){
 
-                      Interaction.find({where:{website:page.id},sort:{order:0}}).populate('layers').populate('hashtags').exec(function(err, datInteraction){
-                            while(datInteraction.length){  
-                                  interactions.push(datInteraction.pop().toJSON());
+                                  async.series([
+                                      function(callback){//Filling the hashtags
+                                        interaction.hashtags=[];
+                                        HashtagInteraction.find({where:{interaction:interaction.id}}).
+                                        populate('hashtag').exec(
+                                          function(err, datHashTag){
+                                              while(datHashTag.length){ 
+                                                var ht=datHashTag.pop().toJSON()
+                                                interaction.hashtags.push(ht.hashtag);
+                                                if(page.iHashtags.indexOf(ht.hashtag.name)<0){
+                                                  page.iHashtags.push(ht.hashtag.name);
+                                                }
+                                                
+                                              }
+
+                                              callback(err,1);
+                                          });
+                                      },
+                                      function(callback){//Filling the layers
+                                        interaction.layers=[];
+                                        Layer.find({where:{interaction:interaction.id},sort:{order:1,type:1}}).exec(
+                                          function(err, datLayer){
+                                              while(datLayer.length){ 
+                                                interaction.layers.push(datLayer.pop().toJSON());
+                                              }
+                                              callback(err,1);
+                                          });
+                                      }
+                                    ],
+                                    function(err, results){
+                                      if(err==null){
+                                        callback(err,1);
+                                      }
+                                    });
+                                }, 
+                                function(err, result){
+                                  if(err==null){
+                                    callback(err,1);
+                                  }
+                                }
+                      );
+                    },
+                    function(callback){//Filling the website hashtags
+                      HashtagWebsite.find({where:{website:page.id}}).populate('hashtag').exec(
+                        function(err, datWebHashTag){
+                            while(datWebHashTag.length){ 
+                              var ht=datWebHashTag.pop().toJSON()
+                              if(page.iHashtags.indexOf(ht.hashtag.name)<0){
+                                page.iHashtags.push(ht.hashtag.name);
+                              }
+                              
                             }
-                            
+
                             callback(err,1);
                         });
-
-                      }
-                    
+                    }
                     ],
                     function(err, results){
                       if(err==null){
-                        
-                        return res.view({page:page,interactions:interactions});  
+                        page.iHashtags=page.iHashtags.sort();
+                        return res.view({page:page,moment:require('moment')});  
                       }
                     });
   },

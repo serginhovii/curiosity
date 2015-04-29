@@ -17,9 +17,9 @@ module.exports = {
 	description:{
 		type: 'string'
 	},
-	hashtags:{
-		collection:'hashtag',
-		via:'interactions'
+	hashtagsI:{
+		collection:'hashtagInteraction',
+		via:'interaction'
 	},
 	order:{
 		type:'float'

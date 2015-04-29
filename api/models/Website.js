@@ -36,9 +36,9 @@ module.exports = {
 		collection:'color',
 		via: 'websites'
 	},
-	designtags:{
-		collection:'hashtag',
-		via:'websites'
+	designtagsI:{
+		collection:'hashtagWebsite',
+		via:'website'
 	},
 	interactions:{
 		collection:'interaction',

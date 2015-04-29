@@ -29,15 +29,13 @@ module.exports = {
 	order:{
 		type:'float'
 	},
-	websites:{
-		collection:'website',
-		via:'designtags',
-		dominant: true
+	websitesI:{
+		collection:'hashtagWebsite',
+		via:'hashtag'
 	},
-	interactions:{
-		collection:'interaction',
-		via:'hashtags',
-		dominant: true
+	interactionsI:{
+		collection:'hashtagInteraction',
+		via:'hashtag'
 	}
 	
   }
