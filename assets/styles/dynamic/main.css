@@ -244,6 +244,7 @@ ul.listInteractions li{
 	width:800px;
 	height:371px;
 	position: relative;
+	cursor: pointer;
 }
 .imgContItemInteraction img{
 	width:100%;

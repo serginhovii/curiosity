@@ -18,7 +18,6 @@ $(document).ready(function(){
 	*/
 	if( $(".interactionsMainContainer").size()>0 ){
 		
-
 		$(".textContItemInteraction > a").bind("click",function(){
 			
 			if($(this).hasClass('show'))
@@ -67,6 +66,42 @@ $(document).ready(function(){
 				,500);
 			}
 		});
+
+		$('.imgContItemInteraction').qtip({
+			show: 'click',
+			hide: 'unfocus',
+			metadata: {
+				type: 'html5', // Use HTML5 data-* attributes
+				name: 'qtipopts' // Grab the metadata from the data-qtipOpts HTML5 attribute
+			},
+			content: {
+				text: function(event, api) {
+					aux=event.target;
+					$.ajax({
+                        url: "/video/"+$(event.target).parent().attr("int")+"/500/"+Math.random() 
+                    })
+                    .then(function(content) {
+                        // Set the tooltip content upon successful retrieval
+						 
+                        api.set('content.text', content);
+						
+                    }, function(xhr, status, error) {
+                        // Upon failure... set the tooltip content to error
+                        api.set('content.text', status + ': ' + error);
+                    });
+        
+                    return 'Loading...'; // Set some initial text
+                }
+			},
+			position: {
+             target: 'mouse', // Use the mouse position as the position origin
+             adjust: {
+                 // Don't adjust continuously the mouse, just use initial position
+                 mouse: false
+             } 
+			}
+			
+			});
 	}
 	
 });
