@@ -52,19 +52,65 @@ img{
 .header{
 	width:100%;
 	background-color: #c5142e;
-	font-size:20px;
 	text-align:left;
 }
 .logoContainer{
-	margin: 0px;
-	padding: 10px 25px;
+	margin: 8px 0px 8px 35px;
+	padding: 0px;
+	display: inline-block;
+}
+.logoContainer a{
+	display: inline-block;
+	padding-top:5px;
 }
 .logoContainer img{
 	width:83px;
+	margin: 0px;
+	padding: 0px;
+}
+.searchForm{
+	float: right;
+	display: inline-block;
+	margin: 0px 10px 0px 0px;
+	vertical-align: top;
+}
+.searchForm form{
+	float: left;
+	display: inline-block;
+	margin-top: 5px;
+}
+.searchForm input[type=text]{
+	height:25px;
+	border: none;
+	width: 183px;
+	margin-top: 0px;
+	padding: 5px;
+	display: inline-block;
+	font-family:Comic Sans MS;
+	color: #666666;
+}
+
+.searchForm  input[type=text].searching{
+	color:#000000;
+}
+.searchForm  a{
+	display: block;
+	margin:0px;
+	float: left;
+	padding: 6px;
+	height: 36px;
+	cursor: pointer;
+	margin-left: 2px;
+}
+.searchForm  a:hover,.searchForm  a:focus{
+	background-color: #fe5c5c;
+}
+.searchForm img{
+	height:36px;
 }
 .content{
 	width:100%;
-	font-family:Comic Sans MS;
+	font-family:'Comic Sans MS';
 	text-align:center;
 }
 .content img{

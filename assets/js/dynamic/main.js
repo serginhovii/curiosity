@@ -12,6 +12,29 @@ var blurBelow=function(obj){
 }
 $(document).ready(function(){
 	
+	$(".searchForm").find("input").bind("focus",function(){
+		if($(this).val() == 'Search'){
+			$(this).val('');
+			$(this).addClass("searching");
+		}
+		else{
+			$(this).select();
+		}	
+	});
+	$(".searchForm").find("input").bind("blur",function(){
+		if($(this).val() == ''){
+			$(this).val('Search');
+			$(this).removeClass("searching");
+		}
+	});
+
+	$(".searchForm").find("a").bind("click",function(evt){
+		evt.preventDefault();
+		if($(".searchForm").find("input").val()!="Search"){
+			$(".searchForm").find("form").trigger("submit");
+		}
+		return false;
+	});
 	/*
 	*
 	* Interactions web page

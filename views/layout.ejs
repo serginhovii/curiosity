@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>New Sails App</title>
+    <title>I++ Gallery</title>
 
     <!-- Viewport mobile tag for sensible mobile support -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -86,11 +86,14 @@
     <div class="mainContainer">
     <div class="header">
       <div class="logoContainer">
-      <a href="/dhome">
-      <img src="/images/dynamic/nlogo.png"/>
-      </a>
-        <a target="_blank" class="referenceLink" href="/reference"></a>
-      </div>
+      <a href="/dhome"><img src="/images/dynamic/nlogo.png" /></a>
+       </div>
+        <div class="searchForm">
+        <form method="get" action="/search/">
+            <input name="text" type="text" value="Search" />
+        </form>
+        <a href="#"><img  src="/images/dynamic/icons/lupa.png"/></a>
+        </div>
     </div>
     <div class="content">
     <%- body %>

@@ -46,6 +46,100 @@ module.exports = {
                       }
                     });
   },
+  search:function(req,res){
+    //
+      var pages=[];
+      var search=[];
+      var query=req.query.text;//.param('text');
+      console.log("Antes "+query);
+      var queryProcessed;
+      console.log(query);
+      if(query!=null){
+        queryProcessed=("'"+query+"'").replace(/ /g,"|");
+        console.log("Despues "+queryProcessed);
+      async.series([
+                    function(callback){            
+                        SearchV.query(
+                                  "SELECT id , totalweight "+
+                                  "FROM  "+
+                                      "( SELECT id , CASE "+
+                                      "WHEN name  REGEXP "+queryProcessed+" THEN 200 "+
+                                      "ELSE 0 "+
+                                      "END +"+
+                                      "CASE "+
+                                      "WHEN hashtags  REGEXP "+queryProcessed+" THEN 100 "+
+                                      "ELSE 0 "+
+                                      "END + "+
+                                      "CASE "+
+                                      "WHEN cname  REGEXP "+queryProcessed+" THEN 75 "+
+                                      "ELSE 0 "+
+                                      "END + "+  
+                                      "CASE "+
+                                      "WHEN (description  REGEXP "+queryProcessed+" "+
+                                        "OR idescription REGEXP "+queryProcessed+") THEN 50 "+
+                                        "ELSE 0 "+
+                                      "END + "+
+                                      "CASE "+
+                                      "WHEN cdescription  REGEXP "+queryProcessed+" THEN 25 "+
+                                      "ELSE 0 "+
+                                      "END  totalweight "+ 
+                                      "FROM searchv )  searchv1 "+
+                                  "WHERE totalweight > 0 "+
+                                  "ORDER BY totalweight ASC"
+                                  ,function(err,datSearch){
+                          while(datSearch.length){
+                            var dSite=datSearch.pop();
+                            search.push(dSite);
+                          }
+                          callback(err,1); 
+                        });
+                    },function(callback){
+                        async.eachSeries(
+                            search,
+                            function(searchItem,callback){
+                              Website.find({where:{id:searchItem.id}}).populate('creator').populate('interactions', {where:{main:true}}).exec(function(err, datSite){
+                                      while(datSite.length){
+                                          var recSite=datSite.pop().toJSON();
+                                          recSite.layers=[];
+                                          pages.push(recSite);
+                                       }  
+                                  callback(err,1);         
+                              });
+                            }, 
+                            function(err, result){
+                              if(err==null){
+                              callback(err,1);
+                              }
+                            }
+                        );
+                    },
+                    function(callback){
+                      async.eachSeries(
+                                pages, 
+                                function(page,callback){
+                                    Layer.find({where:{interaction:page.interactions[0].id},sort:{order:0,type:0 }}).exec(function(err, datLayer){
+                                      while(datLayer.length){  
+                                          page.layers.push(datLayer.pop().toJSON());
+                                      }
+                                    callback(err,1);
+                                    });
+                                }
+                                , 
+                                function(err, result){
+                                  if(err==null){
+                                  callback(err,1);
+                                  }
+                                }
+                      );
+                    }
+                    ],
+                    function(err, results){
+                      if(err==null){
+                        return res.view({pages:pages,moment:require('moment'),search:search});  
+                      }
+                    });
+      }
+  },
   page:function (req, res) {
     var page;
     var interactions=[];
@@ -73,7 +167,9 @@ module.exports = {
                                         populate('hashtag').exec(
                                           function(err, datHashTag){
                                               while(datHashTag.length){ 
-                                                var ht=datHashTag.pop().toJSON()
+                                                var ht=datHashTag.pop().toJSON();
+                                                console.log(ht);
+                                                console.log("otraaaaaaaaaaaaa");
                                                 interaction.hashtags.push(ht.hashtag);
                                                 if(page.iHashtags.indexOf(ht.hashtag.name)<0){
                                                   page.iHashtags.push(ht.hashtag.name);
