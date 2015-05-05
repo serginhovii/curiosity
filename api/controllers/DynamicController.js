@@ -55,7 +55,7 @@ module.exports = {
       var queryProcessed;
       console.log(query);
       if(query!=null){
-        queryProcessed=("'"+query+"'").replace(/ /g,"|");
+        queryProcessed=("'"+query.trim()+"'").replace(/\s{2,}/g, ' ').replace(/ /g,"|");
         console.log("Despues "+queryProcessed);
       async.series([
                     function(callback){            
