@@ -51,12 +51,16 @@ module.exports = {
       var pages=[];
       var search=[];
       var query=req.query.text;//.param('text');
-      console.log("Antes "+query);
       var queryProcessed;
       console.log(query);
       if(query!=null){
         queryProcessed=("'"+query.trim()+"'").replace(/\s{2,}/g, ' ').replace(/ /g,"|");
-        console.log("Despues "+queryProcessed);
+      }
+      else{
+        query='';
+        queryProcessed='';
+      }
+        
       async.series([
                     function(callback){            
                         SearchV.query(
@@ -135,10 +139,10 @@ module.exports = {
                     ],
                     function(err, results){
                       if(err==null){
-                        return res.view({pages:pages,moment:require('moment'),search:search});  
+                        return res.view({pages:pages,moment:require('moment'),search:search,query:query});  
                       }
                     });
-      }
+      
   },
   page:function (req, res) {
     var page;

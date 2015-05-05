@@ -35,6 +35,19 @@ $(document).ready(function(){
 		}
 		return false;
 	});
+	$(".searchForm").find("form").bind("keypress",function(evt){
+		if(evt.keyCode == 13) {
+			if($(".searchForm").find("input").val().trim()==''){
+		      evt.preventDefault();
+		      return false;
+		  	}				
+	    }
+	    
+	});
+
+
+
+
 	/*
 	*
 	* Interactions web page
