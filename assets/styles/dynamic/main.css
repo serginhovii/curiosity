@@ -256,6 +256,8 @@ ul.listInteractions li{
 	float: left;
 	box-sizing: border-box;
 	display: block;
+	user-select: none;
+	-webkit-user-select: none;
 }
 .textContItemInteraction .layerButton{
 	width: 150px;
@@ -270,6 +272,9 @@ ul.listInteractions li{
 	word-wrap: break-word;
 	text-align: left;
 	cursor: pointer;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
 }
 .textContItemInteraction .layerButton span{
 	background-image:url('/images/static/icons/eyeIcon.png');
@@ -279,6 +284,7 @@ ul.listInteractions li{
 	background-repeat: no-repeat;
 	opacity: 0.2;
 	padding: 1px;
+	
 }
 .imgContItemInteraction{
 	float: left;
@@ -302,7 +308,7 @@ ul.listInteractions li{
 
 	opacity: 1;
 	transition:all 0.4s ease-in-out;
-	transform:scale(2.5);
+	transform:scale(2.5) perspective(10px) rotateY(45deg);
 	background:url(data:image/gif;base64,R0lGODlhFAAUAIAAAMDAwP///yH5BAEAAAEALAAAAAAUABQAAAImhI+pwe3vAJxQ0hssnnq/7jVgmJGfGaGiyoyh68GbjNGXTeEcGxQAOw==) 
 	repeat scroll 0 0 rgba(0, 0, 0, 0);
 	-webkit-filter: blur(5px);
@@ -329,6 +335,10 @@ ul.listInteractions li{
 .imgContItemInteraction img.blurBelow{
 	-webkit-filter: blur(3px);
 	filter:  blur(3px);
+}
+.slidebar{
+	border: solid 1px #ff0000;
+	float: left;
 }
 /** Search results page **/
 /***********************/

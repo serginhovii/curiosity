@@ -25,11 +25,13 @@ module.exports = {
                                 pages, 
                                 function(page,callback){
                                     Layer.find({where:{interaction:page.interactions[0].id},sort:{order:0,type:0 }}).exec(function(err, datLayer){
-                                      while(datLayer.length){  
-                                          page.layers.push(datLayer.pop().toJSON());
+                                      while(datLayer.length){
+                                          var layer=datLayer.pop().toJSON();  
+                                          page.layers.push(layer);
                                       }
                                     callback(err,1);
                                     });
+                                    
                                 }
                                 , 
                                 function(err, result){
@@ -43,6 +45,9 @@ module.exports = {
                     function(err, results){
                       if(err==null){
                         return res.view({pages:pages,moment:require('moment')});  
+                      }
+                      else{
+                        console.log(err);
                       }
                     });
   },

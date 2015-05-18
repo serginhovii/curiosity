@@ -42,10 +42,10 @@ $(document).ready(function(){
 		      return false;
 		  	}				
 	    }
-	    
+
 	});
 
-
+	
 
 
 	/*
@@ -54,6 +54,9 @@ $(document).ready(function(){
 	*/
 	if( $(".interactionsMainContainer").size()>0 ){
 		
+		$(".slidebar").slider({orientation: "vertical",
+      range: "min"});
+
 		$(".textContItemInteraction > a").bind("click",function(){
 			
 			if($(this).hasClass('show'))
