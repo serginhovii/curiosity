@@ -68,12 +68,13 @@ $(document).ready(function(){
 		});
 
 		$(".itemInteraction").bind("scaling",function(evt, type ,number){
+			$("img[number='"+(number-1)+"']").addClass("show");
 			$("img[number='"+number+"']").addClass("show");
-			
 			if(type=="show"){
 				setTimeout(
 						(function(s){
 							return function(){
+								s.find("img[number='"+(number-1)+"']").addClass("scaleEffect");
 								s.find("img[number='"+number+"']").addClass("scaleEffect");
 							};
 						})($(this))	
@@ -81,6 +82,9 @@ $(document).ready(function(){
 				setTimeout(
 						(function(s){
 							return function(){
+								s.find("img[number='"+(number-1)+"']").addClass("bounceV");
+								s.find("img[number='"+(number-1)+"']").addClass("backgroundReset");	
+
 								s.find("img[number='"+number+"']").addClass("bounceV");
 								s.find("img[number='"+number+"']").addClass("backgroundReset");
 								blurBelow(s);
@@ -90,6 +94,11 @@ $(document).ready(function(){
 
 
 			}else {
+
+				$("img[number='"+(number-1)+"']").removeClass("bounceV");
+				$("img[number='"+(number-1)+"']").removeClass("scaleEffect");
+				$("img[number='"+(number-1)+"']").removeClass("backgroundReset");	
+
 				$("img[number='"+number+"']").removeClass("bounceV");
 				$("img[number='"+number+"']").removeClass("scaleEffect");
 				$("img[number='"+number+"']").removeClass("backgroundReset");
@@ -97,7 +106,9 @@ $(document).ready(function(){
 					(function(s){
 
 					return function (){
+						s.find("img[number='"+(number-1)+"']").removeClass("show");
 						s.find("img[number='"+number+"']").removeClass("show");
+
 						blurBelow(s);
 					};
 
