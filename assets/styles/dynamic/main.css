@@ -182,6 +182,7 @@ a.imgContainerHome{
 	width:567px;
 	height:263px;
 	position: relative;
+	display:block;
 
 }
 a.imgContainerHome img{
