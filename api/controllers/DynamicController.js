@@ -14,9 +14,6 @@ module.exports = {
                       Website.find({where:{visible:true}}).populate('creator').populate('interactions', {where:{main:true}}).exec(function(err, datSite){
                               while(datSite.length){
                                   var recSite=datSite.pop().toJSON();
-                                  console.log("**************");
-                                  console.log(recSite.name);
-                                  console.log("**************");
                                   recSite.layers=[];
                                   pages.push(recSite);
                                }  
@@ -27,11 +24,16 @@ module.exports = {
                       async.eachSeries(
                                 pages, 
                                 function(page,callback){
+
                                     Layer.find({where:{interaction:page.interactions[0].id},sort:{order:0,type:0 }}).exec(function(err, datLayer){
                                       while(datLayer.length){
                                           var layer=datLayer.pop().toJSON();  
                                           page.layers.push(layer);
+
                                       }
+                                      console.log("*******");
+                                      console.log(page.layers.length);
+                                      console.log("*******");
                                     callback(err,1);
                                     });
                                     
