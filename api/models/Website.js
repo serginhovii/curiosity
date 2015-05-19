@@ -43,8 +43,15 @@ module.exports = {
 	interactions:{
 		collection:'interaction',
 		via:'website'
+	},
+	visible:{
+		type:'boolean',
+		defaultsTo:	true
+	},
+	visibleStatic:{
+		type:'boolean',
+		defaultsTo:	true
 	}
-
   }
 };
 

@@ -11,9 +11,12 @@ module.exports = {
       var pages=[];
       async.series([
                     function(callback){
-                      Website.find().populate('creator').populate('interactions', {where:{main:true}}).exec(function(err, datSite){
+                      Website.find({where:{visible:true}}).populate('creator').populate('interactions', {where:{main:true}}).exec(function(err, datSite){
                               while(datSite.length){
                                   var recSite=datSite.pop().toJSON();
+                                  console.log("**************");
+                                  console.log(recSite.name);
+                                  console.log("**************");
                                   recSite.layers=[];
                                   pages.push(recSite);
                                }  
