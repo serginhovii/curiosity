@@ -273,7 +273,7 @@ ul.listInteractions li{
 	user-select: none;
 	-webkit-user-select: none;
 }
-.textContItemInteraction .layerButton{
+.timelineContainer .layerButton{
 	width: 150px;
 	margin: 4px;
 	padding: 6px;
@@ -289,8 +289,9 @@ ul.listInteractions li{
 	-moz-user-select: none;
 	-webkit-user-select: none;
 	user-select: none;
+	float: left;
 }
-.textContItemInteraction .layerButton span{
+.timelineContainer .layerButton span{
 	background-image:url('/images/static/icons/eyeIcon.png');
 	width:37px;
 	margin-right: 5px;
@@ -307,8 +308,8 @@ ul.listInteractions li{
 	margin-right: 5px;
 	background:url(data:image/gif;base64,R0lGODlhFAAUAIAAAMDAwP///yH5BAEAAAEALAAAAAAUABQAAAImhI+pwe3vAJxQ0hssnnq/7jVgmJGfGaGiyoyh68GbjNGXTeEcGxQAOw==) 
 				repeat scroll 0 0 rgba(0, 0, 0, 0);
-	width:800px;
-	height:371px;
+	width:1000px;
+	height:633px;
 	position: relative;
 	cursor: pointer;
 }
@@ -322,7 +323,8 @@ ul.listInteractions li{
 
 	opacity: 1;
 	transition:all 0.4s ease-in-out;
-	transform:scale(2.5) perspective(10px) rotateY(45deg);
+	/*transform:scale(2.5) perspective(10px) rotateY(45deg);*/
+	/*transform:scale(2.5);*/
 	background:url(data:image/gif;base64,R0lGODlhFAAUAIAAAMDAwP///yH5BAEAAAEALAAAAAAUABQAAAImhI+pwe3vAJxQ0hssnnq/7jVgmJGfGaGiyoyh68GbjNGXTeEcGxQAOw==) 
 	repeat scroll 0 0 rgba(0, 0, 0, 0);
 	-webkit-filter: blur(5px);
@@ -343,7 +345,7 @@ ul.listInteractions li{
 .imgContItemInteraction img.backgroundReset{
 	background: none;
 }
-.textContItemInteraction .show span{
+.timelineContainer .show span{
 	opacity: 1;
 }
 .imgContItemInteraction img.blurBelow{
@@ -353,6 +355,9 @@ ul.listInteractions li{
 .slidebar{
 	border: solid 1px #ff0000;
 	float: left;
+}
+.timelineContainer{
+
 }
 /** Search results page **/
 /***********************/

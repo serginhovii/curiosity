@@ -57,7 +57,7 @@ $(document).ready(function(){
 		$(".slidebar").slider({orientation: "vertical",
       range: "min"});
 
-		$(".textContItemInteraction > a").bind("click",function(){
+		$(".timelineContainer > a").bind("click",function(){
 			
 			if($(this).hasClass('show'))
 				$(this).parents(".itemInteraction").trigger("scaling",["hide",$(this).attr("number")]),
