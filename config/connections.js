@@ -54,6 +54,7 @@ module.exports.connections = {
     host: '127.0.0.1',
     user: 'root',
     password: '123456',
+    migrate:'safe',
     database: 'nxgallery1'
   },
 
