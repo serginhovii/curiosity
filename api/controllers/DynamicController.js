@@ -7,7 +7,7 @@
 
 module.exports = {
   home:function(req,res){
-    //
+      //
       var pages=[];
       async.series([
                     function(callback){
