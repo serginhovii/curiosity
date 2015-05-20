@@ -31,9 +31,6 @@ module.exports = {
                                           page.layers.push(layer);
 
                                       }
-                                      console.log("*******");
-                                      console.log(page.layers.length);
-                                      console.log("*******");
                                     callback(err,1);
                                     });
                                     
