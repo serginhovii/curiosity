@@ -32,23 +32,27 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/':{controller:"Static",action:"home",locals: {layout: '/static/layout'}},
-  '/lois':{controller:"Static",action:"lois",locals: {layout: "/static/layout"}},
-  '/gdrive':{controller:"Static",action:"gDrive",locals: {layout: "/static/layout"}},
-  '/mchulakov':{controller:"Static",action:"chulakovMov",locals: {layout: "/static/layout"}},
-  '/reference':{controller:"Static",action:"reference",locals: {layout: "/static/layout"}},
-  '/chulakov':{controller:"Static",action:"chulakov",locals: {layout: "/static/layout"}},
-  '/static/chulakoveffect1':{controller:"Static",action:"chulakoveffect1",locals: {layout: "/static/layout"}},
-  '/static/chulakoveffect2':{controller:"Static",action:"chulakoveffect2",locals: {layout: "/static/layout"}},
-  '/static/chulakoveffect3':{controller:"Static",action:"chulakoveffect3",locals: {layout: "/static/layout"}},
-  '/static/chulakoveffect4':{controller:"Static",action:"chulakoveffect4",locals: {layout: "/static/layout"}},
-  '/static/chulakoveffect5':{controller:"Static",action:"chulakoveffect5",locals: {layout: "/static/layout"}},
-  '/dhome':{controller:"Dynamic",action:"home"},
-  '/search/':{controller:"Dynamic",action:"search"},
-  '/search/:text':{controller:"Dynamic",action:"search"},
-  '/page/:tag':{controller:"Dynamic",action:"page"},
-  '/video/:interaction/:width/:random':{controller:"DynamicVideo",action:"video", locals:{layout:null}}
-    //{view: 'homepage'}
+  '/':{controller:"Static1",action:"home",locals: {layout: '/static1/layout'}},
+  '/lois':{controller:"Static1",action:"lois",locals: {layout: "/static1/layout"}},
+  '/gdrive':{controller:"Static1",action:"gDrive",locals: {layout: "/static1/layout"}},
+  '/mchulakov':{controller:"Static1",action:"chulakovMov",locals: {layout: "/static1/layout"}},
+  '/reference':{controller:"Static1",action:"reference",locals: {layout: "/static1/layout"}},
+  '/chulakov':{controller:"Static1",action:"chulakov",locals: {layout: "/static1/layout"}},
+  '/static/chulakoveffect1':{controller:"Static1",action:"chulakoveffect1",locals: {layout: "/static1/layout"}},
+  '/static/chulakoveffect2':{controller:"Static1",action:"chulakoveffect2",locals: {layout: "/static1/layout"}},
+  '/static/chulakoveffect3':{controller:"Static1",action:"chulakoveffect3",locals: {layout: "/static1/layout"}},
+  '/static/chulakoveffect4':{controller:"Static1",action:"chulakoveffect4",locals: {layout: "/static1/layout"}},
+  '/static/chulakoveffect5':{controller:"Static1",action:"chulakoveffect5",locals: {layout: "/static1/layout"}},
+  '/vanilla/home':{controller:"Dynamic",action:"home"},
+  '/vanilla/search/':{controller:"Dynamic",action:"search"},
+  '/vanilla/search/:text':{controller:"Dynamic",action:"search"},
+  '/vanilla/page/:tag':{controller:"Dynamic",action:"page"},
+  '/vanilla/video/:interaction/:width/:random':{controller:"DynamicVideo",action:"video", locals:{layout:null}},
+  '/chocolat/home':{controller:"Static",action:"home",locals: {layout: "/static/layout"}},//Static
+  '/chocolat/search/':{controller:"Static",action:"search",locals: {layout: "/static/layout"}},
+  '/chocolat/search/:text':{controller:"Static",action:"search",locals: {layout: "/static/layout"}},
+  '/chocolat/page/:tag':{controller:"Static",action:"page",locals: {layout: "/static/layout"}}
+  //{view: 'homepage'}
 
 	
   

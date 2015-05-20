@@ -159,7 +159,7 @@ $(document).ready(function(){
 				text: function(event, api) {
 					aux=event.target;
 					$.ajax({
-                        url: "/video/"+$(event.target).parent().attr("int")+"/500/"+Math.random() 
+                        url: "/vanilla/video/"+$(event.target).parent().attr("int")+"/500/"+Math.random() 
                     })
                     .then(function(content) {
                         // Set the tooltip content upon successful retrieval

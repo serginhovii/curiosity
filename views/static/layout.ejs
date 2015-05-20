@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>New Sails App</title>
+    <title>I++ Gallery</title>
 
     <!-- Viewport mobile tag for sensible mobile support -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -32,39 +32,32 @@
     <!--STYLES END-->
 
     <!--  Favicon -->
-    <link rel="apple-touch-icon" sizes="57x57" href="/images/favicons/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/images/favicons/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/images/favicons/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/images/favicons/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/images/favicons/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/images/favicons/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/images/favicons/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/images/favicons/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="/images/favicons/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/images/favicons/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png">
-    <link rel="manifest" href="/images/favicons/manifest.json">
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/dynamic/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/dynamic/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/dynamic/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/dynamic/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/dynamic/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/dynamic/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/dynamic/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/dynamic/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/dynamic/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/images/dynamic/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/dynamic/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/dynamic/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/dynamic/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/images/dynamic/favicons/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/images/favicons/ms-icon-144x144.png">
+    <meta name="msapplication-TileImage" content="/images/dynamic/favicons/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
 
 
     <!--  Stylesheets -->
-    <link rel="stylesheet" href="/styles/static/bounceH.css">
-    <link rel="stylesheet" href="/styles/static/bounceV.css">
-    <link rel="stylesheet" href="/styles/static/importer.css">
-    <link rel="stylesheet" href="/styles/static/jquery.fancybox.css">
-    <link rel="stylesheet" href="/styles/static/jquery.qtip.min.css">
-    <link rel="stylesheet" href="/styles/static/main.css">
-    <link rel="stylesheet" href="/styles/static/bounceH.css">
-    <link rel="stylesheet" href="/styles/static/bounceV.css">
-    <link rel="stylesheet" href="/styles/static/importer.css">
-    <link rel="stylesheet" href="/styles/static/jquery.fancybox.css">
-    <link rel="stylesheet" href="/styles/static/jquery.qtip.min.css">
-    <link rel="stylesheet" href="/styles/static/main.css">
+    <link rel="stylesheet" href="/styles/dynamic/main.css">
+    <link rel="stylesheet" href="/styles/dynamic/bounceV.css">
+    <link rel="stylesheet" href="/styles/dynamic/jquery.qtip.min.css">
+    <link rel="stylesheet" href="/styles/dynamic/jquery-ui-slider-pips.css">
+    <link rel="stylesheet" href="/styles/dynamic/jquery-ui.min.css">
     <!--
 
       Client-side Javascript
@@ -87,32 +80,28 @@
           + Use a different preprocessor, like TypeScript
 
     -->
-    <!--SCRIPTS-->
-    <script src="/js/dependencies/sails.io.js"></script>
-    <script src="/js/dependencies/jquery/jquery-1.11.2.min.js"></script>
-    <script src="/js/dependencies/jquery/jquery-ui.min.js"></script>
-    <!--SCRIPTS END-->
-   <script src="/js/static/jquery.fancybox/jquery.fancybox.js"></script>
-   <script src="/js/static/jquery.qtip/jquery.qtip.js"></script>
-   <script src="/js/static/jquery.qtip/imagesloaded.pkg.min.js"></script>
-   <script src="/js/static/main.js"></script>
+    
+   
   </head>
   
   <body>
     <div class="mainContainer">
     <div class="header">
       <div class="logoContainer">
-      <a href="/">
-      <img src="/images/static/logo.png"/>
-      </a>
-        <a target="_blank" class="referenceLink" href="/reference"></a>
-      </div>
+      <a href="/chocolat/home"><img src="/images/dynamic/nlogo.png" /></a>
+       </div>
+        <div class="searchForm">
+        <form method="get" action="/search/">
+            <input name="text" type="text" value="Search" />
+        </form>
+        <a href="#"><img  src="/images/dynamic/icons/lupa.png"/></a>
+        </div>
     </div>
     <div class="content">
     <%- body %>
-	</div>
+    </div>
     <div class="footer"></div>
-	</div>
+  </div>
 <!--
         Client-side Templates
         ========================
@@ -161,5 +150,13 @@
           + Use a different preprocessor, like TypeScript
 
     -->
-	</body>
+    <!--SCRIPTS-->
+    <script src="/js/dependencies/sails.io.js"></script>
+    <script src="/js/dependencies/jquery/jquery-1.11.2.min.js"></script>
+    <script src="/js/dependencies/jquery/jquery-ui.min.js"></script>
+    <!--SCRIPTS END-->
+    <script src="/js/dynamic/jquery.qtip.js"></script>
+    <script src="/js/dynamic/jquery-ui-slider-pips.js"></script>
+    <script src="/js/dynamic/main.js"></script>
+  </body>
 </html>
