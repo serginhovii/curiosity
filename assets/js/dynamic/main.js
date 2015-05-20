@@ -58,13 +58,27 @@ $(document).ready(function(){
       range: "min"});
 
 		$(".timelineContainer > a").bind("click",function(){
-			
-			if($(this).hasClass('show'))
-				$(this).parents(".itemInteraction").trigger("scaling",["hide",$(this).attr("number")]),
-				$(this).removeClass('show')
-			else
-				$(this).parents(".itemInteraction").trigger("scaling",["show",$(this).attr("number")]),
-				$(this).addClass('show')
+			var number=parseInt($(this).attr("number"));
+			if($(this).hasClass('show')){
+				$(this).parents(".itemInteraction").trigger("scaling",["hide",$(this).attr("number")]);
+				$(this).removeClass('show');
+				$(this).parent().find("[number]").each(function(){
+					if(parseInt($(this).attr("number"))> number)
+						$(this).removeClass('show');
+					
+				});
+				
+			} 
+			else{
+				$(this).parents(".itemInteraction").trigger("scaling",["show",$(this).attr("number")]);
+				$(this).addClass('show');
+				$(this).parent().find("[number]").each(function(){
+					if(parseInt($(this).attr("number"))< number)
+						$(this).addClass('show');
+					
+				});
+				
+			}
 		});
 
 		$(".itemInteraction").bind("scaling",function(evt, type ,number){
@@ -93,7 +107,7 @@ $(document).ready(function(){
 							};
 						})($(this))	
 						,400);
-				for(i=number; i>0;i--){
+				for(i=number; i>=0;i--){
 					var imgAux=$(this).find("img[number='"+(i)+"']");
 					if(!imgAux.hasClass("show"))
 						imgAux.addClass("show");

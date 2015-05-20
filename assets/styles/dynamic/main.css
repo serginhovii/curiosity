@@ -135,8 +135,10 @@ img{
 	margin:0px  auto;
 }
 .bounceV{
+	/*
 	-webkit-animation: bounceV 0.8s ease-out;
 	animation: bounceV 0.8s ease-out;
+	*/
 }
 /** Home page **/
 /***************/
