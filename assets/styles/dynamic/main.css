@@ -357,7 +357,7 @@ ul.listInteractions li{
 	float: left;
 }
 .timelineContainer{
-
+	margin-top:10px;
 }
 /** Search results page **/
 /***********************/

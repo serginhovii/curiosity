@@ -68,8 +68,8 @@ $(document).ready(function(){
 		});
 
 		$(".itemInteraction").bind("scaling",function(evt, type ,number){
-			$("img[number='"+(number-1)+"']").addClass("show");
-			$("img[number='"+number+"']").addClass("show");
+			$(this).find("img[number='"+(number-1)+"']").addClass("show");
+			$(this).find("img[number='"+number+"']").addClass("show");
 			if(type=="show"){
 				setTimeout(
 						(function(s){
@@ -87,21 +87,28 @@ $(document).ready(function(){
 
 								s.find("img[number='"+number+"']").addClass("bounceV");
 								s.find("img[number='"+number+"']").addClass("backgroundReset");
+
+
 								blurBelow(s);
 							};
 						})($(this))	
 						,400);
+				for(i=number; i>0;i--){
+					var imgAux=$(this).find("img[number='"+(i)+"']");
+					if(!imgAux.hasClass("show"))
+						imgAux.addClass("show");
+				}
 
 
 			}else {
 
-				$("img[number='"+(number-1)+"']").removeClass("bounceV");
-				$("img[number='"+(number-1)+"']").removeClass("scaleEffect");
-				$("img[number='"+(number-1)+"']").removeClass("backgroundReset");	
+				$(this).find("img[number='"+(number-1)+"']").removeClass("bounceV");
+				$(this).find("img[number='"+(number-1)+"']").removeClass("scaleEffect");
+				$(this).find("img[number='"+(number-1)+"']").removeClass("backgroundReset");	
 
-				$("img[number='"+number+"']").removeClass("bounceV");
-				$("img[number='"+number+"']").removeClass("scaleEffect");
-				$("img[number='"+number+"']").removeClass("backgroundReset");
+				$(this).find("img[number='"+number+"']").removeClass("bounceV");
+				$(this).find("img[number='"+number+"']").removeClass("scaleEffect");
+				$(this).find("img[number='"+number+"']").removeClass("backgroundReset");
 				setTimeout(
 					(function(s){
 
@@ -114,6 +121,16 @@ $(document).ready(function(){
 
 				})($(this))
 				,500);
+
+				$(this).find("img[number]").each(function(){
+					var mycount=parseInt($(this).attr("number"));
+					if(mycount>=number){
+						$(this).removeClass("show");
+
+					}
+				});
+				
+
 			}
 		});
 
