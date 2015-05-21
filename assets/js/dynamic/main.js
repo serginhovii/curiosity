@@ -52,7 +52,7 @@ $(document).ready(function(){
 	*
 	* Interactions web page
 	*/
-	if( $(".interactionsMainContainer").size()>0 ){
+	if( $(".interactionsMainContainer").size()>0 && !$(".interactionsMainContainer").hasClass("chocolat")){
 		
 		$(".slidebar").slider({orientation: "vertical",
       range: "min"});
@@ -110,7 +110,7 @@ $(document).ready(function(){
 						,400);
 				
 				*/
-				
+
 				for(i=number; i>=0;i--){
 					var imgAux=$(this).find("img[number='"+(i)+"']");
 					if(!imgAux.hasClass("show"))
@@ -161,6 +161,7 @@ $(document).ready(function(){
 			}*/
 		});
 
+	
 		$('.imgContItemInteraction').qtip({
 			show: 'click',
 			hide: 'unfocus',
@@ -196,6 +197,7 @@ $(document).ready(function(){
 			}
 			
 			});
+		
 	}
 	
 });

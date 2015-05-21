@@ -270,7 +270,7 @@ ul.listInteractions li{
 	padding-top: 10px;
 	line-height: 30px;
 }
-.interactionsMainContainer p.allHashtags span{
+.interactionsMainContainer p.allHashtags a{
 	background-color: #c5142e;
 	color:#ffffff;
 	padding:5px;
@@ -282,7 +282,7 @@ ul.listInteractions li{
 	font-size: 12px;
 	line-height: 30px;
 }
-.interactionsMainContainer p.interactionHashtags span{
+.interactionsMainContainer p.interactionHashtags a{
 	background-color: #c5142e;
 	color:#ffffff;
 	padding:5px;
@@ -405,7 +405,7 @@ ul.listInteractions li{
 	height: 25px;
 	margin-left: 5px;
 	background-image: url('/images/dynamic/icons/url.png');
-	background-position: 159px -25px;
+	background-position: 159px 0px;
 	background-repeat: no-repeat;
 	display: block;
 	padding-right: 33px;
@@ -414,7 +414,7 @@ ul.listInteractions li{
 
 }
 .visitWebsiteContainer a:hover{
-	background-position: 159px 0px;
+	background-position: 159px -25px;
 }
 /** Search results page **/
 /***********************/
