@@ -227,6 +227,22 @@ ul.listInteractions li{
 	text-align: left;margin-left: 10px;
 	margin: 0px 10px 3px 10px;
 	font-size: 25px;
+	display: inline-block;
+	width: auto;
+	float: left;
+}
+.interactionsMainContainer h1 a{
+	height: 25px;
+	width: 25px;
+	margin-left: 5px;
+	background-image: url('/images/dynamic/icons/url.png');
+	background-position: 0px 0px;
+	background-repeat: no-repeat;
+	display: block;
+	float: right;
+}
+.interactionsMainContainer h1 a:hover{
+	background-position: 0px -25px;
 }
 .interactionsMainContainer h2{
 	text-align: left;
@@ -365,6 +381,29 @@ ul.listInteractions li{
 .timelineContainer{
 	margin-top:5px;
 	
+}
+.visitWebsiteContainer{
+	border: solid 1px #474747;
+	display: inline-block;
+	padding: 25px;
+	border-radius: 5px;
+	margin-bottom: 30px;
+	line-height: 25px;
+}
+.visitWebsiteContainer a{
+	height: 25px;
+	margin-left: 5px;
+	background-image: url('/images/dynamic/icons/url.png');
+	background-position: 159px -25px;
+	background-repeat: no-repeat;
+	display: block;
+	padding-right: 33px;
+	font-size: 25px;
+	color: #474747;
+
+}
+.visitWebsiteContainer a:hover{
+	background-position: 159px 0px;
 }
 /** Search results page **/
 /***********************/
