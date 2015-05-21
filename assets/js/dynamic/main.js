@@ -60,8 +60,8 @@ $(document).ready(function(){
 		$(".timelineContainer > a").bind("click",function(){
 			var number=parseInt($(this).attr("number"));
 			if($(this).hasClass('show')){
+				
 				$(this).parents(".itemInteraction").trigger("scaling",["hide",$(this).attr("number")]);
-				$(this).removeClass('show');
 				$(this).parent().find("[number]").each(function(){
 					if(parseInt($(this).attr("number"))> number)
 						$(this).removeClass('show');
@@ -84,7 +84,8 @@ $(document).ready(function(){
 		$(".itemInteraction").bind("scaling",function(evt, type ,number){
 			$(this).find("img[number='"+(number-1)+"']").addClass("show");
 			$(this).find("img[number='"+number+"']").addClass("show");
-			if(type=="show"){
+			//if(type=="show"){
+				/*
 				setTimeout(
 						(function(s){
 							return function(){
@@ -107,14 +108,26 @@ $(document).ready(function(){
 							};
 						})($(this))	
 						,400);
+				
+				*/
+				
 				for(i=number; i>=0;i--){
 					var imgAux=$(this).find("img[number='"+(i)+"']");
 					if(!imgAux.hasClass("show"))
 						imgAux.addClass("show");
 				}
 
+				$(this).find("img[number]").each(function(){
+					var mycount=parseInt($(this).attr("number"));
+					if(mycount>number){
+						$(this).removeClass("show");
 
-			}else {
+					}
+				});
+
+
+			//}
+			/*else {
 
 				$(this).find("img[number='"+(number-1)+"']").removeClass("bounceV");
 				$(this).find("img[number='"+(number-1)+"']").removeClass("scaleEffect");
@@ -145,7 +158,7 @@ $(document).ready(function(){
 				});
 				
 
-			}
+			}*/
 		});
 
 		$('.imgContItemInteraction').qtip({

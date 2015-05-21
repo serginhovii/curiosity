@@ -179,11 +179,11 @@ module.exports = {
                                               while(datHashTag.length){ 
                                                 var ht=datHashTag.pop().toJSON();
                                                 interaction.hashtags.push(ht.hashtag);
-                                                if(ht.hashtag.name){
+
                                                   if(page.iHashtags.indexOf(ht.hashtag.name)<0){
                                                     page.iHashtags.push(ht.hashtag.name);
                                                   }
-                                                }
+                                                
                                               }
 
                                               callback(err,1);
