@@ -316,6 +316,8 @@ ul.listInteractions li{
 	width:85px;
 	height:39px;
 	position: relative;
+	background-color: #f7f7f7;
+	
 }
 .timelineContainer  .layerButton img{
 	position: absolute;
@@ -375,8 +377,9 @@ ul.listInteractions li{
 .imgContItemInteraction img.backgroundReset{
 	background: none;
 }
-.timelineContainer .show span{
+.timelineContainer a.show{
 	opacity: 1;
+	background-color: #ffa2b0;
 }
 .imgContItemInteraction img.blurBelow{
 	-webkit-filter: blur(3px);
