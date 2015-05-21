@@ -298,7 +298,6 @@ ul.listInteractions li{
 	-webkit-user-select: none;
 }
 .timelineContainer .layerButton{
-	width: 150px;
 	margin: 4px;
 	padding: 6px;
 	display: block;
@@ -314,7 +313,15 @@ ul.listInteractions li{
 	-webkit-user-select: none;
 	user-select: none;
 	float: left;
+	width:85px;
+	height:39px;
+	position: relative;
 }
+.timelineContainer  .layerButton img{
+	position: absolute;
+	height:39px;
+}
+/*
 .timelineContainer .layerButton span{
 	background-image:url('/images/static/icons/eyeIcon.png');
 	width:37px;
@@ -325,6 +332,7 @@ ul.listInteractions li{
 	padding: 1px;
 	
 }
+*/
 .imgContItemInteraction{
 	display: block;
 	padding: 0px 0px;
