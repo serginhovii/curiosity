@@ -1,5 +1,5 @@
 body{
-	background-color:#ffffff;
+	background-color:#f5f5f5;
 	text-align:center;
 	width:100%;
 	height:100%;
@@ -133,6 +133,7 @@ img{
 .contentMainContainer{
 	width:90%;
 	margin:0px  auto;
+	max-width: 1230px;
 }
 .bounceV{
 	/*
@@ -155,19 +156,19 @@ ul.listHome::after{
 ul.listHome li{
 	width: 50%;
 	margin:0px;
-	padding:10px;
+	padding:10px 10px 18px 10px;
 	float: left;
 	box-sizing: border-box;
 }
 .divItemTextHome p{
 	text-align: left;
 	font-size: 13px;
-	margin: 5px auto;
+	margin: 0px auto 3px auto;
 }
 .divItemTextHome h3{
 	font-size: 15px;
 	text-align: left;
-	margin: 5px auto;
+	margin: 0px auto 0px auto;
 	color:#474747;
 }
 .divItemTextHome h3 a{
@@ -197,7 +198,7 @@ a.imgContainerHome img{
 /** Interactions page **/
 /***********************/
 .interactionsMainContainer{
-	text-align: left;
+	text-align: center;
 	display: inline-block;
 }
 ul.listInteractions{
@@ -206,6 +207,7 @@ ul.listInteractions{
 	display: block;
 	clear: both;
 	padding: 0px;
+	margin: 0px auto;
 }
 ul.listInteractions::after{
 	clear: both;
@@ -244,10 +246,13 @@ ul.listInteractions li{
 	font-size: 13px;
 	text-align: left;
 	margin-left: 10px;
+	margin-top:15px;
 	font-size: 12px;	
+	float: left;
 }
 .interactionsMainContainer p.allHashtags{
 	padding-top: 10px;
+	line-height: 30px;
 }
 .interactionsMainContainer p.allHashtags span{
 	background-color: #c5142e;
@@ -256,9 +261,10 @@ ul.listInteractions li{
 	border-radius: 5px;
 }
 .interactionsMainContainer p.interactionHashtags{
-	padding-top: 5px;
-	padding-bottom: 5px;
+	padding-top: 4px;
+	padding-bottom: 0px;
 	font-size: 12px;
+	line-height: 30px;
 }
 .interactionsMainContainer p.interactionHashtags span{
 	background-color: #c5142e;
@@ -268,7 +274,7 @@ ul.listInteractions li{
 }
 .textContItemInteraction
 {
-	max-width:190px;
+	width:100%;
 	float: left;
 	box-sizing: border-box;
 	display: block;
@@ -304,7 +310,6 @@ ul.listInteractions li{
 	
 }
 .imgContItemInteraction{
-	float: left;
 	display: block;
 	padding: 0px 0px;
 	margin-right: 5px;
@@ -316,7 +321,6 @@ ul.listInteractions li{
 	cursor: pointer;
 }
 .imgContItemInteraction img{
-	width:100%;
 	height:100%;
 	display:none;
 	position:absolute;
@@ -355,11 +359,12 @@ ul.listInteractions li{
 	filter:  blur(3px);
 }
 .slidebar{
-	border: solid 1px #ff0000;
+	
 	float: left;
 }
 .timelineContainer{
-	margin-top:10px;
+	margin-top:5px;
+	
 }
 /** Search results page **/
 /***********************/

@@ -59,7 +59,6 @@ module.exports = {
       var search=[];
       var query=req.query.text;//.param('text');
       var queryProcessed;
-      console.log(query);
       if(query!=null){
         queryProcessed=("'"+query.trim()+"'").replace(/\s{2,}/g, ' ').replace(/ /g,"|");
       }
@@ -179,8 +178,6 @@ module.exports = {
                                           function(err, datHashTag){
                                               while(datHashTag.length){ 
                                                 var ht=datHashTag.pop().toJSON();
-                                                console.log(ht);
-                                                console.log("otraaaaaaaaaaaaa");
                                                 interaction.hashtags.push(ht.hashtag);
                                                 if(page.iHashtags.indexOf(ht.hashtag.name)<0){
                                                   page.iHashtags.push(ht.hashtag.name);
