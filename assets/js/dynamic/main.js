@@ -242,9 +242,7 @@ $(document).ready(function(){
 	});
 
 
-	      $( "input" )
-      // don't navigate away from the field on tab when selecting an item
-      .bind( "keydown", function( event ) {
+	      $( "input" ).bind( "keydown", function( event ) {
         if ( event.keyCode === $.ui.keyCode.TAB &&
             $( this ).autocomplete( "instance" ).menu.active ) {
           event.preventDefault();
@@ -254,8 +252,8 @@ $(document).ready(function(){
         minLength: 3,
         source: function( request, response ) {
           // delegate back to autocomplete, but extract the last term
-          response( $.ui.autocomplete.filter(
-            availableTags, extractLast( request.term ) ) );
+          var results=$.ui.autocomplete.filter(availableTags, extractLast( request.term ) );
+          response( results.slice(0, 10) );
         },
         focus: function() {
           // prevent value inserted on focus
@@ -283,8 +281,7 @@ $(document).ready(function(){
 	*/
 	if( $(".interactionsMainContainer").size()>0 && !$(".interactionsMainContainer").hasClass("chocolat")){
 		
-		$(".slidebar").slider({orientation: "vertical",
-      range: "min"});
+		
 
 		$(".timelineContainer > a").bind("click",function(){
 			var number=parseInt($(this).attr("number"));
