@@ -11,7 +11,7 @@ module.exports = {
       var pages=[];
       async.series([
                     function(callback){
-                      Website.find({where:{visible:true}}).populate('creator').populate('interactions', {where:{main:true}}).exec(function(err, datSite){
+                      Website.find({where:{visible:true},sort:{id:0}}).populate('creator').populate('interactions', {where:{main:true}}).exec(function(err, datSite){
                               while(datSite.length){
                                   var recSite=datSite.pop().toJSON();
                                   recSite.layers=[];
@@ -235,17 +235,10 @@ module.exports = {
                       }
                     });
   },
-	hi: function (req, res) {
-    var auxi;
-    Creator.find({id:1}).populate('websites').exec(function(err,myRecord){
-      
-      while(myRecord.length){
-        auxi=myRecord.pop().toJSON();
-        console.log(auxi);
-        console.log("--------------------");
-      }
- 		return res.json(auxi.websites);     
-    });
+	loglink: function (req, res) {
+    
+    Loglink.create({web:'vanilla'}).exec(function(err,rest){ console.log(err); });
+    return res.send('ok');
     
   }
 };

@@ -18,6 +18,23 @@ function extractLast( term ) {
   return split( term ).pop();
 }
 $(document).ready(function(){
+
+	$(".visitWebsite").bind("click",function(evt){
+		$.ajax({
+				  url: "/vanilla/loglink/?rand="+Math.random()
+				}).done(function() {});
+		
+
+	});
+	$(".visitWebsiteChocolat").bind("click",function(evt){
+		$.ajax({
+				  url: "/chocolat/loglink/?rand="+Math.random()
+				}).done(function() {});
+		
+
+	});
+	
+
 	var availableTags = [
         '03 July',
 '14-18 La Grande Guerre ',

@@ -11,7 +11,7 @@ module.exports = {
       var pages=[];
       async.series([
                     function(callback){
-                      Website.find({where:{visible:true}}).populate('creator').populate('interactions', {where:{main:true}}).exec(function(err, datSite){
+                      Website.find({where:{visible:true},sort:{id:0}}).populate('creator').populate('interactions', {where:{main:true}}).exec(function(err, datSite){
                               while(datSite.length){
                                   var recSite=datSite.pop().toJSON();
                                   recSite.layers=[];
@@ -246,6 +246,10 @@ module.exports = {
  		return res.json(auxi.websites);     
     });
     
+  },
+  loglink: function (req, res) {
+    Loglink.create({web:'chocolat'}).exec(function(err,rest){ console.log(err); });
+    return res.send('ok');
   }
 };
 

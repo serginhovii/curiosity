@@ -43,6 +43,7 @@ module.exports.routes = {
   '/static/chulakoveffect3':{controller:"Static1",action:"chulakoveffect3",locals: {layout: "/static1/layout"}},
   '/static/chulakoveffect4':{controller:"Static1",action:"chulakoveffect4",locals: {layout: "/static1/layout"}},
   '/static/chulakoveffect5':{controller:"Static1",action:"chulakoveffect5",locals: {layout: "/static1/layout"}},
+  '/vanilla/loglink':{controller:"Dynamic",action:"loglink", locals:{layout:null}},
   '/vanilla/home':{controller:"Dynamic",action:"home"},
   '/vanilla/search/':{controller:"Dynamic",action:"search"},
   '/vanilla/search/:text':{controller:"Dynamic",action:"search"},
@@ -51,7 +52,8 @@ module.exports.routes = {
   '/chocolat/home':{controller:"Static",action:"home",locals: {layout: "/static/layout"}},//Static
   '/chocolat/search/':{controller:"Static",action:"search",locals: {layout: "/static/layout"}},
   '/chocolat/search/:text':{controller:"Static",action:"search",locals: {layout: "/static/layout"}},
-  '/chocolat/page/:tag':{controller:"Static",action:"page",locals: {layout: "/static/layout"}}
+  '/chocolat/page/:tag':{controller:"Static",action:"page",locals: {layout: "/static/layout"}},
+  '/chocolat/loglink':{controller:"Static",action:"loglink", locals:{layout:null}}
   //{view: 'homepage'}
 
 	
