@@ -153,7 +153,7 @@ module.exports = {
   page:function (req, res) {
     var page;
     var interactions=[];
-
+      Loglink.create({web:'wchocolat'}).exec(function(err,rest){ console.log(err); });
       async.series([
                     function(callback){
                       Website.find({where:{tag:req.param('tag')}}).
