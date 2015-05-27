@@ -32,7 +32,7 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/':{controller:"Static1",action:"home",locals: {layout: '/static1/layout'}},
+  '/':{controller:"Dynamic",action:"home"},
   '/lois':{controller:"Static1",action:"lois",locals: {layout: "/static1/layout"}},
   '/gdrive':{controller:"Static1",action:"gDrive",locals: {layout: "/static1/layout"}},
   '/mchulakov':{controller:"Static1",action:"chulakovMov",locals: {layout: "/static1/layout"}},
