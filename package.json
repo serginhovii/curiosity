@@ -3,6 +3,9 @@
   "private": true,
   "version": "0.0.0",
   "description": "a Sails application",
+  "engines": {
+    "node": "6.11.1"
+  },
   "keywords": [],
   "dependencies": {
     "ejs": "~0.8.4",
